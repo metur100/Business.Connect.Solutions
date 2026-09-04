@@ -50,168 +50,109 @@ export default function Contact() {
       </div>
 
       <section className="section">
-        <div className="wrap split">
-          <div>
-            <p className="eyebrow">Direkt erreichbar</p>
+        <div className="wrap">
+          <div className="split" style={{ alignItems: 'stretch' }}>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <p className="eyebrow">Direkt erreichbar</p>
 
-            <ul className="qual">
-              <li>
-                <span>Telefon</span>
-                <span>
-                  <a href={company.phoneHref}>{company.phone}</a>
-                </span>
-              </li>
+              <ul className="qual">
+                <li>
+                  <span>Telefon</span>
+                  <span>
+                    <a href={company.phoneHref}>{company.phone}</a>
+                  </span>
+                </li>
 
-              <li>
-                <span>WhatsApp</span>
-                <span>
-                  <a
-                    href={company.whatsapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Chat öffnen
-                  </a>
-                </span>
-              </li>
+                <li>
+                  <span>WhatsApp</span>
+                  <span>
+                    <a
+                      href={company.whatsapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Chat öffnen
+                    </a>
+                  </span>
+                </li>
 
-              <li>
-                <span>E-Mail</span>
-                <span>
-                  <a href={`mailto:${company.email}`}>
-                    {company.email}
-                  </a>
-                </span>
-              </li>
+                <li>
+                  <span>E-Mail</span>
+                  <span>
+                    <a href={`mailto:${company.email}`}>
+                      {company.email}
+                    </a>
+                  </span>
+                </li>
 
-              <li>
-                <span>Adresse</span>
-                <span>
-                  {company.street}, {company.city}
-                </span>
-              </li>
+                <li>
+                  <span>Adresse</span>
+                  <span>
+                    {company.street}, {company.city}
+                  </span>
+                </li>
 
-              <li>
-                <span>Zeiten</span>
-                <span>24 Stunden, 7 Tage die Woche</span>
-              </li>
+                <li>
+                  <span>Zeiten</span>
+                  <span>24 Stunden, 7 Tage die Woche</span>
+                </li>
 
-              <li>
-                <span>Sprachen</span>
-                <span>Deutsch, Englisch, Türkisch</span>
-              </li>
-            </ul>
-
-            <div
-              className="anyq"
-              style={{
-                marginTop: '2rem',
-                padding: '1.75rem',
-              }}
-            >
-              <p className="eyebrow" style={{ width: '100%' }}>
-                Persönlich erreichbar
-              </p>
-
-              <h2
-                style={{
-                  fontFamily: 'var(--ff-display)',
-                  fontSize: 'var(--step-2)',
-                  fontWeight: 300,
-                  lineHeight: 1.05,
-                  margin: 0,
-                }}
-              >
-                Keine anonyme Zentrale.
-              </h2>
-
-              <p
-                className="muted"
-                style={{
-                  margin: 0,
-                  maxWidth: '42ch',
-                }}
-              >
-                Ihre Anfrage landet direkt bei der Person, die den Einsatz
-                plant und begleitet. Dadurch bleiben Wege kurz und Absprachen
-                klar – auch wenn sich der Termin kurzfristig ändert.
-              </p>
-
-              <a
-                className="btn btn--brass"
-                href={company.phoneHref}
-              >
-                Jetzt anrufen →
-              </a>
-            </div>
-          </div>
-
-          <div>
-            <p className="eyebrow">Standort</p>
-
-            <div
-              style={{
-                background: 'var(--white)',
-                border: '1px solid var(--paper-2)',
-              }}
-            >
-              <iframe
-                title="Standort von BCO Solutions in Neubiberg bei München"
-                src="https://www.google.com/maps?q=Professor-Messerschmitt-Stra%C3%9Fe%203a%2C%2085579%20Neubiberg%20bei%20M%C3%BCnchen&output=embed"
-                style={{
-                  display: 'block',
-                  width: '100%',
-                  minHeight: '360px',
-                  border: 0,
-                }}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+                <li>
+                  <span>Sprachen</span>
+                  <span>Deutsch, Englisch, Türkisch</span>
+                </li>
+              </ul>
 
               <div
+                className="anyq"
                 style={{
-                  padding: '1.25rem',
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  justifyContent: 'space-between',
-                  gap: '1rem',
-                  flexWrap: 'wrap',
+                  marginTop: '2rem',
+                  padding: '1.75rem',
+                  flex: 1,
+                  alignContent: 'space-between',
                 }}
               >
-                <div>
-                  <p
-                    className="dossier__k"
-                    style={{ margin: 0 }}
-                  >
-                    Büro bei München
+                <div style={{ display: 'grid', gap: '1.25rem' }}>
+                  <p className="eyebrow" style={{ width: '100%' }}>
+                    Persönlich erreichbar
                   </p>
 
-                  <p
+                  <h2
                     style={{
-                      margin: '0.5rem 0 0',
-                      lineHeight: 1.45,
+                      fontFamily: 'var(--ff-display)',
+                      fontSize: 'var(--step-2)',
+                      fontWeight: 300,
+                      lineHeight: 1.05,
+                      margin: 0,
                     }}
                   >
-                    {company.street}
-                    <br />
-                    {company.city}
-                    <br />
-                    {company.country}
+                    Keine anonyme Zentrale.
+                  </h2>
+
+                  <p
+                    className="muted"
+                    style={{
+                      margin: 0,
+                      maxWidth: '42ch',
+                    }}
+                  >
+                    Ihre Anfrage landet direkt bei der Person, die den
+                    Einsatz plant und begleitet. Dadurch bleiben Wege kurz
+                    und Absprachen klar – auch wenn sich der Termin
+                    kurzfristig ändert.
                   </p>
                 </div>
 
                 <a
-                  className="btn btn--ghost"
-                  href="https://www.google.com/maps/search/?api=1&query=Professor-Messerschmitt-Stra%C3%9Fe%203a%2C%2085579%20Neubiberg%20bei%20M%C3%BCnchen"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  className="btn btn--brass"
+                  href={company.phoneHref}
                 >
-                  Route öffnen →
+                  Jetzt anrufen →
                 </a>
               </div>
             </div>
 
-            <div style={{ marginTop: '2.5rem' }}>
+            <div>
               <p className="eyebrow">Anfrageformular</p>
 
               {sent && (
@@ -337,6 +278,73 @@ export default function Contact() {
                   Anfrage verwendet.
                 </p>
               </form>
+            </div>
+          </div>
+
+          <div style={{ marginTop: 'clamp(3rem, 6vw, 5rem)' }}>
+            <p className="eyebrow">Standort</p>
+
+            <div
+              style={{
+                background: 'var(--white)',
+                border: '1px solid var(--paper-2)',
+              }}
+            >
+              <iframe
+                title="Standort von BCO Solutions in Neubiberg bei München"
+                src="https://www.google.com/maps?q=Professor-Messerschmitt-Stra%C3%9Fe%203a%2C%2085579%20Neubiberg%20bei%20M%C3%BCnchen&output=embed"
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  minHeight: '360px',
+                  border: 0,
+                }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+
+              <div
+                style={{
+                  padding: '1.25rem',
+                  display: 'flex',
+                  alignItems: 'flex-end',
+                  justifyContent: 'space-between',
+                  gap: '1rem',
+                  flexWrap: 'wrap',
+                }}
+              >
+                <div>
+                  <p
+                    className="dossier__k"
+                    style={{ margin: 0 }}
+                  >
+                    Büro bei München
+                  </p>
+
+                  <p
+                    style={{
+                      margin: '0.5rem 0 0',
+                      lineHeight: 1.45,
+                    }}
+                  >
+                    {company.street}
+                    <br />
+                    {company.city}
+                    <br />
+                    {company.country}
+                  </p>
+                </div>
+
+                <a
+                  className="btn btn--ghost"
+                  href="https://www.google.com/maps/search/?api=1&query=Professor-Messerschmitt-Stra%C3%9Fe%203a%2C%2085579%20Neubiberg%20bei%20M%C3%BCnchen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ marginLeft: 'auto' }}
+                >
+                  Route öffnen →
+                </a>
+              </div>
             </div>
           </div>
         </div>
