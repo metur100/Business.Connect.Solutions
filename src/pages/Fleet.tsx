@@ -5,15 +5,15 @@ import Reveal from '../components/Reveal'
 
 const fleetImages = [
   {
-    src: '/images/bco-fleet-e-class.png',
+    src: `${import.meta.env.BASE_URL}images/bco-fleet-e-class.png`,
     alt: 'Schwarze Mercedes-Benz E-Klasse für geschäftliche Chauffeurfahrten in München',
   },
   {
-    src: '/images/bco-fleet-s-class.png',
+    src: `${import.meta.env.BASE_URL}images/bco-fleet-s-class.png`,
     alt: 'Schwarze Mercedes-Benz S-Klasse vor einem eleganten Münchner Hotel',
   },
   {
-    src: '/images/bco-fleet-v-class.png',
+    src: `${import.meta.env.BASE_URL}images/bco-fleet-v-class.png`,
     alt: 'Schwarze Mercedes-Benz V-Klasse für Gruppen- und Konferenztransfers',
   },
 ]

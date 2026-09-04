@@ -83,7 +83,7 @@ export default function Driver() {
             }}
           >
             <img
-              src="/images/bco-driver-service.png"
+              src={`${import.meta.env.BASE_URL}images/bco-driver-service.png`}
               alt="Professioneller Chauffeur neben einer schwarzen Limousine"
               style={{
                 width: '100%',

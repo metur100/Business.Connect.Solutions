@@ -9,15 +9,15 @@ import {
 
 const fleetImages = [
   {
-    src: '/images/bco-fleet-e-class.png',
+    src: `${import.meta.env.BASE_URL}images/bco-fleet-e-class.png`,
     alt: 'Schwarze Mercedes-Benz E-Klasse für geschäftliche Chauffeurfahrten in München',
   },
   {
-    src: '/images/bco-fleet-s-class.png',
+    src: `${import.meta.env.BASE_URL}images/bco-fleet-s-class.png`,
     alt: 'Schwarze Mercedes-Benz S-Klasse vor einem eleganten Münchner Hotel',
   },
   {
-    src: '/images/bco-fleet-v-class.png',
+    src: `${import.meta.env.BASE_URL}images/bco-fleet-v-class.png`,
     alt: 'Schwarze Mercedes-Benz V-Klasse für Gruppen- und Konferenztransfers',
   },
 ]
@@ -28,9 +28,9 @@ export default function Home() {
       {/* ---------- HERO ---------- */}
       <section className="hero">
         <div className="hero__media">
-          {/* Replace /hero.mp4 with the client's own footage. Poster shows until it loads. */}
-          <video autoPlay muted loop playsInline poster="/hero-poster.jpg">
-            <source src="/hero.mp4" type="video/mp4" />
+          {/* Replace hero.mp4 with the client's own footage */}
+          <video autoPlay muted loop playsInline poster={`${import.meta.env.BASE_URL}images/bco-driver-service.png`}>
+            <source src={`${import.meta.env.BASE_URL}hero.mp4`} type="video/mp4" />
           </video>
         </div>
         <div className="hero__scrim" />
@@ -75,7 +75,7 @@ export default function Home() {
             <p className="eyebrow">Ihr Vorteil</p>
             <h2 className="h">Eine feste<br />Ansprechperson</h2>
             <img
-              src="/images/bco-driver-service.png"
+              src={`${import.meta.env.BASE_URL}images/bco-driver-service.png`}
               alt="Chauffeur der Business Connect Solutions neben einer schwarzen Limousine"
               style={{
                 flex: 1,
