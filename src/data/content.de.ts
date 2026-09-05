@@ -149,7 +149,7 @@ export const events: EventItem[] = [
     date: 'So. 15.11.2026 · 15:30 Uhr',
     city: 'München',
     text: 'Patriots vs. Lions in der Allianz Arena – Stadion-Transfers und Hospitality-Shuttles für Gäste und Sponsoren.',
-    image: 'termin1.png',
+    image: 'images/nfl.jpeg',
     body: [
       'Zum dritten NFL-Spiel in München füllt sich die Allianz Arena am 15. November 2026 mit internationalen Gästen – Anpfiff ist um 15:30 Uhr, wenn die New England Patriots auf die Detroit Lions treffen.',
       'Rund um Spieltage dieser Grössenordnung sind Parkplätze rar, Strassen gesperrt und Taxistände überlastet. Wir übernehmen den Transfer von Hotel oder Flughafen direkt zum Stadion, holen Sie nach dem Schlusspfiff wieder ab und stimmen Ankunftszeiten mit Hospitality-Programmen und VIP-Bereichen ab.',
@@ -162,7 +162,7 @@ export const events: EventItem[] = [
     date: '19.09. — 04.10.2026',
     city: 'München',
     text: 'Zelt-Transfers, Firmenabende und Gästebetreuung – mit Fahrern, die die Sperrungen rund um die Theresienwiese kennen.',
-    image: 'termin2.png',
+    image: 'images/oktoberfest.jpeg',
     body: [
       'Zwei Wochen lang verwandelt sich die Theresienwiese in die grösste Volksfestbühne der Welt – mit ihr auch der Verkehr rings um die Wiesn: großräumige Sperrungen, überlastete Taxistände und ausgebuchte Hotels.',
       'Für ein einzelnes Zeltabendessen genügt oft ein Fahrzeug. Holt eine Firma dagegen mehrere Gäste zeitgleich von unterschiedlichen Hotels ab, wird daraus schnell eine kleine Flotte – genau dafür disponieren wir im Vorfeld Fahrzeugmix, Reihenfolge und Übergabepunkte.',
@@ -175,7 +175,7 @@ export const events: EventItem[] = [
     date: '5.–7. Oktober 2026',
     city: 'München',
     text: 'Internationale Fachmesse für Immobilien und Investitionen – Aussteller- und Delegationslogistik zwischen Messe, Hotels und Flughafen.',
-    image: 'termin3.png',
+    image: 'images/expo.jpeg',
     body: [
       'Die Expo Real bringt jeden Oktober die internationale Immobilien- und Investmentbranche auf das Gelände der Messe München – mit dichtem Terminplan zwischen Empfängen, Standterminen und Networking-Abenden in der ganzen Stadt.',
       'Aussteller und Delegationen bewegen sich meist im Halbstundentakt zwischen Hotel, Messehalle und Abendveranstaltung. Wir planen diese Taktung im Voraus und stellen sicher, dass der Fahrer vor Ort ist, bevor der Termin endet.',
@@ -188,7 +188,7 @@ export const events: EventItem[] = [
     date: '10.–13. November 2026',
     city: 'München',
     text: 'Weltleitmesse der Elektronikbranche – Gruppenshuttles und Standbetreuung für internationale Delegationen.',
-    image: 'termin4.png',
+    image: 'images/electronica.jpeg',
     body: [
       'Die Electronica zählt zu den grössten Fachmessen der Elektronikbranche weltweit und zieht Aussteller und Delegationen aus allen Kontinenten nach München.',
       'Vier Messetage bedeuten dichten Programmablauf zwischen Flughafenankunft, Hotel, Messestand und Abendveranstaltungen – oft für Gruppen, die zeitversetzt anreisen. Wir koordinieren Abholzeiten je nach Ankunft und stellen bei Bedarf mehrere Fahrzeuge gleichzeitig.',
