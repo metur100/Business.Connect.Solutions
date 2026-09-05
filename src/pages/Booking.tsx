@@ -1,10 +1,9 @@
-import { useState, type FormEvent } from 'react'
+import { useState, useRef, useEffect, type FormEvent } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { company } from '../data/company'
 import { useLanguage } from '../i18n/LanguageContext'
 import { fleetImages } from '../data/fleetImages'
 import AnyQuestions from '../components/AnyQuestions'
-
 
 const emptyForm = {
   occasion: '', date: '', from: '', to: '', passengers: '',
@@ -20,6 +19,20 @@ export default function Booking() {
   const [vehicle, setVehicle] = useState<string | null>(searchParams.get('fahrzeug'))
   const [form, setForm] = useState({ ...emptyForm, to: searchParams.get('ziel') ?? '' })
   const [sent, setSent] = useState(false)
+
+  const sectionRef = useRef<HTMLElement>(null)
+  const isInitialMount = useRef(true)
+
+  useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false
+      return
+    }
+    if (sectionRef.current) {
+      const topOffset = sectionRef.current.getBoundingClientRect().top + window.scrollY - 80
+      window.scrollTo({ top: Math.max(0, topOffset), behavior: 'smooth' })
+    }
+  }, [step])
 
   const stepLabels = [t('booking.stepVehicle'), t('booking.stepTrip'), t('booking.stepContact')]
 
@@ -37,23 +50,31 @@ export default function Booking() {
 
     const body = [
       `${t('booking.mailVehicle')}: ${vehicle ?? t('booking.noVehicle')}`,
-      `${t('booking.mailOccasion')}: ${form.occasion}`,
-      `${t('contact.mailDate')}: ${form.date}`,
-      `${t('contact.mailFrom')}: ${form.from}`,
-      `${t('contact.mailTo')}: ${form.to}`,
-      `${t('booking.mailPassengers')}: ${form.passengers}`,
+      `${t('booking.mailOccasion')}: ${form.occasion || '-'}`,
+      `${t('contact.mailDate')}: ${form.date ? form.date.replace('T', ' ') : '-'}`,
+      `${t('contact.mailFrom')}: ${form.from || '-'}`,
+      `${t('contact.mailTo')}: ${form.to || '-'}`,
+      `${t('booking.mailPassengers')}: ${form.passengers || '-'}`,
       '',
       `${t('contact.mailName')}: ${form.name}`,
       `${t('contact.mailEmail')}: ${form.email}`,
-      `${t('contact.mailPhone')}: ${form.phone}`,
+      `${t('contact.mailPhone')}: ${form.phone || '-'}`,
       '',
-      `${t('contact.mailMessage')}: ${form.message}`,
-    ].join('\n')
+      `${t('contact.mailMessage')}: ${form.message || '-'}`,
+    ].join('\r\n')
 
-    window.location.href =
+    const mailtoUrl =
       `mailto:${company.email}` +
       `?subject=${encodeURIComponent(t('contact.mailSubject'))}` +
       `&body=${encodeURIComponent(body)}`
+
+    const a = document.createElement('a')
+    a.href = mailtoUrl
+    a.style.display = 'none'
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+
     setSent(true)
   }
 
@@ -67,7 +88,7 @@ export default function Booking() {
         </div>
       </div>
 
-      <section className="section">
+      <section className="section" ref={sectionRef}>
         <div className="wrap">
           <ol className="steps">
             {stepLabels.map((label, i) => {

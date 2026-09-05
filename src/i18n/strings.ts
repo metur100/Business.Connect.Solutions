@@ -61,7 +61,7 @@ const de = {
     ondemandText: 'Diese Fahrzeuge stelle ich auf Anfrage bereit. Bitte planen Sie etwas Vorlauf ein, damit Fahrzeug und Fahrer sicher verfügbar sind.',
   },
   services: {
-    eyebrow: 'Leistungen', h1: 'Sieben Leistungen, ein Ansprechpartner',
+    eyebrow: 'Leistungen', h1: '8 Leistungen, ein Ansprechpartner',
     intro: 'Jede Leistung lässt sich einzeln buchen oder als Teil einer durchgeplanten Reise kombinieren. Die Koordination bleibt in einer Hand.',
     solutionsEyebrow: 'Lösungen', solutionsH2: 'Für wiederkehrende Anforderungen',
   },
@@ -206,7 +206,7 @@ const en: typeof de = {
     ondemandText: 'I provide these vehicles on request. Please allow some lead time so the vehicle and driver are reliably available.',
   },
   services: {
-    eyebrow: 'Services', h1: 'Seven services, one point of contact',
+    eyebrow: 'Services', h1: '8 services, one point of contact',
     intro: 'Each service can be booked individually or combined as part of a fully planned trip. Coordination always stays in one hand.',
     solutionsEyebrow: 'Solutions', solutionsH2: 'For recurring requirements',
   },
