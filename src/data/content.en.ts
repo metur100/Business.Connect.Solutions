@@ -230,7 +230,7 @@ export const qualifications = [
 
 export const faqs = [
   { q: 'What chauffeur services do you offer in Munich?', a: 'Security drives and transfers, chauffeur service for executives and delegations, roadshows and multi-day assignments, airport transfers, hourly bookings, weddings, and event and conference support.' },
-  { q: 'Which cities do you operate in?', a: "We're based in Munich. We drive throughout Germany and Europe — regularly to Monaco, St. Tropez, Courchevel, Davos, Milan, Vienna and Zurich. Assignments in Asia and Switzerland are also part of our experience." },
+  { q: 'Which cities do you operate in?', a: 'We operate from Munich and are at our clients’ service throughout Germany. International journeys and transfers – such as to Salzburg, Zurich, Vienna, Milan, Davos, Courchevel, Monaco, or St. Tropez – are provided either with our own vehicles or through our vetted partner network, depending on the assignment.' },
   { q: 'Do I always get the same driver?', a: "Yes — that's the core of the offering. Instead of an anonymous vehicle fleet, you get one personal, dedicated driver: short lines of communication, clear arrangements, trust." },
   { q: 'Is the service available around the clock?', a: 'Yes. We take enquiries, changes and short-notice requests 24 hours a day, by phone or WhatsApp.' },
   { q: "What's the difference between a security driver and a chauffeur?", a: 'A security driver has completed multi-day specialized training in high-level vehicle dynamics. In addition to a professional chauffeur presence, they master emergency braking with evasive maneuvers, skid recovery, control during oversteer or understeer, and precise vehicle handling in extreme weather such as aquaplaning and black ice.' },

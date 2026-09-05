@@ -230,7 +230,7 @@ export const qualifications = [
 
 export const faqs = [
   { q: 'Welche Chauffeurleistungen bieten Sie in München an?', a: 'Sicherheitsfahrten und Transfers, Chauffeurservice für Vorstände und Delegationen, Roadshows und mehrtägige Begleitungen, Flughafentransfers, Stundenbuchungen, Hochzeiten sowie Event- und Konferenzbegleitung.' },
-  { q: 'In welchen Städten sind Sie unterwegs?', a: 'Basis ist München. Wir fahren deutschlandweit sowie europaweit – regelmässig nach Monaco, St. Tropez, Courchevel, Davos, Mailand, Wien und Zürich. Einsätze in Asien und der Schweiz gehören zur Erfahrung.' },
+  { q: 'In welchen Städten sind Sie unterwegs?', a: 'Wir operieren von München aus und sind deutschlandweit für unsere Kunden im Einsatz. Internationale Fahrten und Transfers – etwa nach Salzburg, Zürich, Wien, Mailand, Davos, Courchevel, Monaco oder St. Tropez – realisieren wir je nach Auftrag mit eigenen Fahrzeugen oder über unser geprüftes Partnernetzwerk.' },
   { q: 'Bekomme ich immer denselben Fahrer?', a: 'Ja, das ist der Kern des Angebots. Statt einer anonymen Fahrzeugflotte erhalten Sie einen persönlichen, fest zugeordneten Fahrer – kurze Wege, klare Absprachen, Vertrauen.' },
   { q: 'Ist der Service rund um die Uhr verfügbar?', a: 'Ja. Anfragen, Änderungen und kurzfristige Einsätze nehmen wir 24 Stunden am Tag entgegen, per Telefon oder WhatsApp.' },
   { q: 'Was unterscheidet einen Sicherheitsfahrer von einem Chauffeur?', a: 'Ein Sicherheitsfahrer verfügt über ein mehrtägiges Spezialtraining für den Grenzbereich der Fahrphysik. Neben souveränem Auftreten beherrscht er Notbremsungen mit Ausweichmanövern, gezieltes Abfangen bei Schleudern, Über- oder Untersteuern sowie das sichere Fahren bei Extremwetter wie Aquaplaning und Glatteis.' },
