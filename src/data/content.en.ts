@@ -10,6 +10,7 @@ export type Service = {
   slug: string
   title: string
   teaser: string
+  image?: string
   body: string[]
   points: string[]
 }
@@ -20,6 +21,7 @@ export const services: Service[] = [
     slug: 'limousine-chauffeurservice',
     title: 'Limousine & Chauffeur Service',
     teaser: 'Your personal driver for the highest security standards — not an anonymous fleet.',
+    image: 'images/s01-chauffeurservice.png',
     body: [
       'I have worked as a chauffeur since 2006, and as a trained security driver since 2012. My training includes multi-day advanced driving courses at the Sachsenring driving safety centre – including training for special protection vehicles – as well as the Mercedes Guard programme.',
       'Over many years I have safely accompanied executives, delegations, private clients and international guests – including at the Munich Security Conference and on assignments for government delegations at home and abroad.',
@@ -39,6 +41,7 @@ export const services: Service[] = [
     slug: 'flughafentransfer',
     title: 'Airport Transfer',
     teaser: 'Exclusive transfers to and from all national and international airports.',
+    image: 'images/s02-flughafentransfer.png',
     body: [
       'Every journey requires expertise. Arrival and departure times are monitored continuously, and delays or rebookings are handled without you having to ask.',
       'A welcome in the arrivals hall, help with your luggage, and a vehicle already waiting when you walk through the door.',
@@ -50,6 +53,7 @@ export const services: Service[] = [
     slug: 'sicherheitsdienst',
     title: 'Security Service on Request',
     teaser: 'Armed and unarmed professional security solutions for sensitive assignments.',
+    image: 'images/s03-sicherheitsdienst.png',
     body: [
       'Security without compromise: for high-risk and sensitive occasions we provide trained personnel, matched to the situation, route and protocol.',
       'This is based on the expertise and instruction certificate required under §34a of the German Trade Regulation Act (GewO), together with many years of practical experience with government delegations and major events.',
@@ -61,6 +65,7 @@ export const services: Service[] = [
     slug: 'gruppen',
     title: 'Group Travel & Transport',
     teaser: "Group transport isn't just transportation — it's coordination.",
+    image: 'images/s04-gruppenreisen.png',
     body: [
       'Congresses, roadshows and large-scale events often mean moving many guests at the same time. We plan the sequence, vehicle mix and handover points in advance.',
       'From a single vehicle to a multi-car fleet with Sprinters and coaches – dispatched from a single point of contact.',
@@ -72,6 +77,7 @@ export const services: Service[] = [
     slug: 'reisemanagement',
     title: 'Travel Management',
     teaser: 'Travel is a managed process: planning, coordination and timing.',
+    image: 'images/s05-reisemanagement.png',
     body: [
       'The travel management service is built on a holistic approach that covers every phase of a business or private trip – from the first enquiry to the return journey.',
       'All transport needs on land, in the air and on water are handled together.',
@@ -83,6 +89,7 @@ export const services: Service[] = [
     slug: 'host-hostessenservices',
     title: 'Host & Hostess Services',
     teaser: 'Professional representation at the first point of contact.',
+    image: 'images/s06-host-hostessen.png',
     body: [
       'Personal assistance for travel, appointments and special requests – at the airport, the trade fair stand or the hotel.',
       'Multilingual staff, matched to the occasion and the guest profile.',
@@ -94,6 +101,7 @@ export const services: Service[] = [
     slug: 'concierge-und-persoenliche-assistenz',
     title: 'Concierge & Personal Assistance',
     teaser: 'Personal support for travel, appointments, guests and special requests.',
+    image: 'images/s07-concierge-assistenz.png',
     body: [
       "A professional trip doesn't end at the car door. On request, BCO also helps coordinate hotels, appointments, restaurants, events and individual travel plans.",
       'One point of contact keeps track of everything and aligns chauffeur service, transfers, hosts, security requirements and other service providers with one another.',
@@ -113,6 +121,7 @@ export const services: Service[] = [
     slug: 'vip-meet-and-greet',
     title: 'VIP Meet & Greet',
     teaser: 'Personal welcome right at the aircraft or gate — discreet and without waiting.',
+    image: 'images/s08-vip-meet-and-greet.png',
     body: [
       'For guests who shouldn\'t lose time at the terminal: a welcome directly at the aircraft door or gate, escort through customs and security, and handover to the waiting chauffeur.',
       'Coordinated with the airline and airport so arrival and onward travel flow together seamlessly.',

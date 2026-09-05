@@ -30,25 +30,36 @@ export default function ServiceDetail() {
       </div>
 
       <section className="section">
-        <div className="wrap split">
-          <div>
-            <p className="eyebrow">{t('serviceDetail.scopeEyebrow')}</p>
-            <ul className="qual">
-              {service.points.map((p) => (
-                <li key={p}>
-                  <span>—</span>
-                  <span>{p}</span>
-                </li>
+        <div className="wrap">
+          {service.image && (
+            <div className="service-detail__img">
+              <img
+                src={`${import.meta.env.BASE_URL}${service.image}`}
+                alt={service.title}
+                loading="lazy"
+              />
+            </div>
+          )}
+          <div className="split" style={{ marginTop: service.image ? '2.5rem' : 0 }}>
+            <div>
+              <p className="eyebrow">{t('serviceDetail.scopeEyebrow')}</p>
+              <ul className="qual">
+                {service.points.map((p) => (
+                  <li key={p}>
+                    <span>—</span>
+                    <span>{p}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              {service.body.map((b) => (
+                <p className={b === service.body[0] ? 'lead' : 'muted'} key={b}>{b}</p>
               ))}
-            </ul>
-          </div>
-          <div>
-            {service.body.map((b) => (
-              <p className={b === service.body[0] ? 'lead' : 'muted'} key={b}>{b}</p>
-            ))}
-            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginTop: '1.5rem' }}>
-              <Link className="btn" to="/anfrage">{t('serviceDetail.cta')}</Link>
-              <Link className="btn btn--ghost" to="/leistungen">{t('serviceDetail.allServices')}</Link>
+              <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginTop: '1.5rem' }}>
+                <Link className="btn" to="/anfrage">{t('serviceDetail.cta')}</Link>
+                <Link className="btn btn--ghost" to="/leistungen">{t('serviceDetail.allServices')}</Link>
+              </div>
             </div>
           </div>
         </div>

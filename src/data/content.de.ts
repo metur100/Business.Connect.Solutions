@@ -10,6 +10,7 @@ export type Service = {
   slug: string
   title: string
   teaser: string
+  image?: string
   body: string[]
   points: string[]
 }
@@ -20,6 +21,7 @@ export const services: Service[] = [
     slug: 'limousine-chauffeurservice',
     title: 'Limousine & Chauffeurservice',
     teaser: 'Ihr persönlicher Fahrer für höchste Sicherheitsansprüche — statt anonymer Flotte.',
+    image: 'images/s01-chauffeurservice.png',
     body: [
       'Seit 2006 bin ich als Chauffeur tätig, seit 2012 zusätzlich als ausgebildeter Sicherheitsfahrer. Die Ausbildung umfasst mehrtägige Fahrsicherheitstrainings am Fahrsicherheitszentrum Sachsenring – inklusive Training für Sonderschutzfahrzeuge – sowie das Mercedes Guard Programm.',
       'Über viele Jahre habe ich Vorstände, Delegationen, Privatpersonen und internationale Gäste sicher begleitet – unter anderem im Rahmen der Münchner Sicherheitskonferenz sowie bei Einsätzen für Regierungsdelegationen im In- und Ausland.',
@@ -39,6 +41,7 @@ export const services: Service[] = [
     slug: 'flughafentransfer',
     title: 'Flughafentransfer',
     teaser: 'Exklusive Transfers von und zu allen nationalen und internationalen Flughäfen.',
+    image: 'images/s02-flughafentransfer.png',
     body: [
       'Jede Reise erfordert Expertise. Ankunfts- und Abflugzeiten werden laufend überwacht, Verspätungen und Umbuchungen ohne Rückfragen aufgefangen.',
       'Empfang in der Ankunftshalle, Gepäckübernahme und ein Fahrzeug, das bereits bereitsteht, wenn Sie durch die Tür kommen.',
@@ -50,6 +53,7 @@ export const services: Service[] = [
     slug: 'sicherheitsdienst',
     title: 'Sicherheitsdienst auf Anfrage',
     teaser: 'Bewaffnete und unbewaffnete professionelle Sicherheitslösungen für sensible Einsätze.',
+    image: 'images/s03-sicherheitsdienst.png',
     body: [
       'Sicherheit ohne Kompromisse: Für risikoreiche und sensible Anlässe stellen wir geschultes Personal, abgestimmt auf Lage, Route und Protokoll.',
       'Grundlage sind Sachkunde- und Unterrichtungsnachweis nach §34a GewO sowie langjährige Praxis bei Regierungsdelegationen und Grossveranstaltungen.',
@@ -61,6 +65,7 @@ export const services: Service[] = [
     slug: 'gruppen',
     title: 'Gruppenreisen & Transport',
     teaser: 'Gruppentransport ist keine Beförderung, sondern Koordination.',
+    image: 'images/s04-gruppenreisen.png',
     body: [
       'Bei Kongressen, Roadshows oder Grossveranstaltungen müssen viele Gäste gleichzeitig bewegt werden. Wir planen Abfolge, Fahrzeugmix und Übergabepunkte im Voraus.',
       'Vom Einzelfahrzeug bis zur mehrköpfigen Flotte mit Sprintern und Reisebussen – aus einer Hand disponiert.',
@@ -72,6 +77,7 @@ export const services: Service[] = [
     slug: 'reisemanagement',
     title: 'Reisemanagement',
     teaser: 'Reisen ist ein gesteuerter Prozess: Planung, Koordination und Timing.',
+    image: 'images/s05-reisemanagement.png',
     body: [
       'Der Reisemanagement-Service basiert auf einem ganzheitlichen Ansatz, der alle Phasen einer Geschäfts- oder Privatreise abdeckt – von der ersten Anfrage bis zur Rückkehr.',
       'Alle Transportbedürfnisse zu Land, in der Luft und auf dem Wasser werden gemeinsam behandelt.',
@@ -83,6 +89,7 @@ export const services: Service[] = [
     slug: 'host-hostessenservices',
     title: 'Host & Hostessenservices',
     teaser: 'Professionelle Repräsentation am ersten Kontaktpunkt.',
+    image: 'images/s06-host-hostessen.png',
     body: [
       'Persönliche Assistenz für Reisen, Termine und Sonderwünsche – am Flughafen, am Messestand oder im Hotel.',
       'Mehrsprachiges Personal, abgestimmt auf Anlass und Gästestruktur.',
@@ -94,6 +101,7 @@ export const services: Service[] = [
     slug: 'concierge-und-persoenliche-assistenz',
     title: 'Concierge & persönliche Assistenz',
     teaser: 'Persönliche Unterstützung für Reisen, Termine, Gäste und besondere Wünsche.',
+    image: 'images/s07-concierge-assistenz.png',
     body: [
       'Eine professionelle Reise endet nicht an der Fahrzeugtür. Auf Wunsch unterstützt BCO auch bei der Koordination von Hotels, Terminen, Restaurants, Veranstaltungen und individuellen Reiseplänen.',
       'Ein Ansprechpartner behält den Überblick und stimmt Chauffeurservice, Transfers, Gastgeber, Sicherheitsanforderungen und weitere Dienstleister aufeinander ab.',
@@ -113,6 +121,7 @@ export const services: Service[] = [
     slug: 'vip-meet-and-greet',
     title: 'VIP Meet & Greet',
     teaser: 'Persönlicher Empfang direkt am Flugzeug oder am Gate – diskret und ohne Wartezeit.',
+    image: 'images/s08-vip-meet-and-greet.png',
     body: [
       'Für Gäste, die keine Zeit am Terminal verlieren sollen: Empfang direkt an der Flugzeugtür oder am Gate, Begleitung durch Zoll und Sicherheitskontrolle und Übergabe an den wartenden Chauffeur.',
       'Abgestimmt mit Fluggesellschaft und Flughafen, damit Ankunft und Weiterfahrt nahtlos ineinander übergehen.',
