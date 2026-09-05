@@ -59,7 +59,7 @@ export const services: Service[] = [
   {
     code: 'S-04',
     slug: 'gruppen',
-    title: 'Gruppen',
+    title: 'Gruppenreisen & Transport',
     teaser: 'Gruppentransport ist keine Beförderung, sondern Koordination.',
     body: [
       'Bei Kongressen, Roadshows oder Grossveranstaltungen müssen viele Gäste gleichzeitig bewegt werden. Wir planen Abfolge, Fahrzeugmix und Übergabepunkte im Voraus.',
@@ -107,6 +107,17 @@ export const services: Service[] = [
       'Yacht-, Jet- und Helikopteranfragen',
       'Individuelle Sonderwünsche',
     ],
+  },
+  {
+    code: 'S-08',
+    slug: 'vip-meet-and-greet',
+    title: 'VIP Meet & Greet',
+    teaser: 'Persönlicher Empfang direkt am Flugzeug oder am Gate – diskret und ohne Wartezeit.',
+    body: [
+      'Für Gäste, die keine Zeit am Terminal verlieren sollen: Empfang direkt an der Flugzeugtür oder am Gate, Begleitung durch Zoll und Sicherheitskontrolle und Übergabe an den wartenden Chauffeur.',
+      'Abgestimmt mit Fluggesellschaft und Flughafen, damit Ankunft und Weiterfahrt nahtlos ineinander übergehen.',
+    ],
+    points: ['Empfang an Flugzeug oder Gate', 'Begleitung durch Zoll und Kontrollen', 'Gepäckübernahme', 'Nahtlose Übergabe an den Chauffeur'],
   },
 ]
 

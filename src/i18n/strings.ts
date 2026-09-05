@@ -19,9 +19,9 @@ const de = {
   },
   home: {
     heroEyebrow: 'München · seit 2006 · 24/7',
-    heroH1Prefix: 'Private ',
+    heroH1Prefix: 'Private',
     heroH1Highlight: 'Chauffeur',
-    heroH1Suffix: ' Service',
+    heroH1Suffix: 'Service',
     heroSub: 'Exklusiver Chauffeurdienst in München & Umland',
     ctaBook: 'Fahrt anfragen →', ctaWhatsapp: 'Per WhatsApp schreiben',
     positioningEyebrow: 'Ihr Vorteil', positioningH2a: 'Eine feste', positioningH2b: 'Ansprechperson',
@@ -164,9 +164,9 @@ const en: typeof de = {
   },
   home: {
     heroEyebrow: 'Munich · since 2006 · 24/7',
-    heroH1Prefix: 'Private ',
+    heroH1Prefix: 'Private',
     heroH1Highlight: 'Chauffeur',
-    heroH1Suffix: ' Service',
+    heroH1Suffix: 'Service',
     heroSub: 'Exclusive Chauffeur Service in Munich & Surrounding Area',
     ctaBook: 'Request a ride →', ctaWhatsapp: 'Message us on WhatsApp',
     positioningEyebrow: 'Your advantage', positioningH2a: 'One dedicated', positioningH2b: 'point of contact',

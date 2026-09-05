@@ -59,7 +59,7 @@ export const services: Service[] = [
   {
     code: 'S-04',
     slug: 'gruppen',
-    title: 'Groups',
+    title: 'Group Travel & Transport',
     teaser: "Group transport isn't just transportation — it's coordination.",
     body: [
       'Congresses, roadshows and large-scale events often mean moving many guests at the same time. We plan the sequence, vehicle mix and handover points in advance.',
@@ -107,6 +107,17 @@ export const services: Service[] = [
       'Yacht, jet and helicopter enquiries',
       'Individual special requests',
     ],
+  },
+  {
+    code: 'S-08',
+    slug: 'vip-meet-and-greet',
+    title: 'VIP Meet & Greet',
+    teaser: 'Personal welcome right at the aircraft or gate — discreet and without waiting.',
+    body: [
+      'For guests who shouldn\'t lose time at the terminal: a welcome directly at the aircraft door or gate, escort through customs and security, and handover to the waiting chauffeur.',
+      'Coordinated with the airline and airport so arrival and onward travel flow together seamlessly.',
+    ],
+    points: ['Welcome at the aircraft or gate', 'Escort through customs and checks', 'Luggage handling', 'Seamless handover to the chauffeur'],
   },
 ]
 
