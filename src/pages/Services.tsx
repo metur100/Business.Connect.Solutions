@@ -1,32 +1,31 @@
 import { Link } from 'react-router-dom'
-import { services, solutions } from '../data/content'
+import { useLanguage } from '../i18n/LanguageContext'
 import AnyQuestions from '../components/AnyQuestions'
 import Reveal from '../components/Reveal'
 
 export default function Services() {
+  const { t, content } = useLanguage()
+  const { services, solutions } = content
   return (
     <>
       <div className="phead">
         <div className="wrap">
-          <p className="eyebrow">Leistungen</p>
-          <h1>Sieben Leistungen, ein Ansprechpartner</h1>
-          <p>
-            Jede Leistung lässt sich einzeln buchen oder als Teil einer durchgeplanten Reise kombinieren.
-            Die Koordination bleibt in einer Hand.
-          </p>
+          <p className="eyebrow">{t('services.eyebrow')}</p>
+          <h1>{t('services.h1')}</h1>
+          <p>{t('services.intro')}</p>
         </div>
       </div>
 
       <section className="section">
         <div className="wrap">
           <div className="cards" style={{ marginTop: 0 }}>
-            {services.map((s) => (
-              <Link className="card" to={`/leistungen/${s.slug}`} key={s.slug}>
+            {services.map((s, i) => (
+              <Reveal as={Link} to={`/leistungen/${s.slug}`} className="card" key={s.slug} delay={i * 60}>
                 <span className="card__code">{s.code}</span>
                 <h2 className="h3">{s.title}</h2>
                 <span className="card__body">{s.teaser}</span>
-                <span className="card__more">Details →</span>
-              </Link>
+                <span className="card__more">{t('common.details')}</span>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -34,8 +33,8 @@ export default function Services() {
 
       <section className="section section--band">
         <div className="wrap">
-          <p className="eyebrow">Lösungen</p>
-          <h2 className="h">Für wiederkehrende Anforderungen</h2>
+          <p className="eyebrow">{t('services.solutionsEyebrow')}</p>
+          <h2 className="h">{t('services.solutionsH2')}</h2>
           <div className="cards" style={{ background: 'rgba(242,241,237,0.14)', borderColor: 'rgba(242,241,237,0.14)' }}>
             {solutions.map((s) => (
               <Reveal className="card" key={s.title}>

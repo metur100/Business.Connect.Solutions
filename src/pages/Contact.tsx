@@ -1,9 +1,15 @@
 import { useState, type FormEvent } from 'react'
-import { company, services } from '../data/content'
+import { useSearchParams } from 'react-router-dom'
+import { company } from '../data/company'
+import { useLanguage } from '../i18n/LanguageContext'
 import Faq from '../components/Faq'
 
 export default function Contact() {
   const [sent, setSent] = useState(false)
+  const [searchParams] = useSearchParams()
+  const ziel = searchParams.get('ziel') ?? ''
+  const { t, content } = useLanguage()
+  const { services } = content
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -11,22 +17,20 @@ export default function Contact() {
     const formData = new FormData(event.currentTarget)
 
     const body = [
-      `Name: ${formData.get('name')}`,
-      `E-Mail: ${formData.get('email')}`,
-      `Telefon: ${formData.get('phone')}`,
-      `Leistung: ${formData.get('service')}`,
-      `Datum und Uhrzeit: ${formData.get('date')}`,
-      `Abholort: ${formData.get('from')}`,
-      `Ziel: ${formData.get('to')}`,
+      `${t('contact.mailName')}: ${formData.get('name')}`,
+      `${t('contact.mailEmail')}: ${formData.get('email')}`,
+      `${t('contact.mailPhone')}: ${formData.get('phone')}`,
+      `${t('contact.mailService')}: ${formData.get('service')}`,
+      `${t('contact.mailDate')}: ${formData.get('date')}`,
+      `${t('contact.mailFrom')}: ${formData.get('from')}`,
+      `${t('contact.mailTo')}: ${formData.get('to')}`,
       '',
-      `Nachricht: ${formData.get('message')}`,
+      `${t('contact.mailMessage')}: ${formData.get('message')}`,
     ].join('\n')
 
     const mailtoUrl =
       `mailto:${company.email}` +
-      `?subject=${encodeURIComponent(
-        'Fahrtanfrage über bcosolution.com',
-      )}` +
+      `?subject=${encodeURIComponent(t('contact.mailSubject'))}` +
       `&body=${encodeURIComponent(body)}`
 
     window.location.href = mailtoUrl
@@ -37,14 +41,12 @@ export default function Contact() {
     <>
       <div className="phead">
         <div className="wrap">
-          <p className="eyebrow">Kontakt</p>
+          <p className="eyebrow">{t('contact.eyebrow')}</p>
 
-          <h1>Fahrt anfragen</h1>
+          <h1>{t('contact.h1')}</h1>
 
           <p>
-            Sagen Sie, wann und wohin. Sie bekommen eine verbindliche
-            Bestätigung mit Fahrer, Fahrzeug und Zeitfenster – bei kurzfristigen
-            Anfragen am schnellsten per Telefon oder WhatsApp.
+            {t('contact.intro')}
           </p>
         </div>
       </div>
@@ -53,31 +55,31 @@ export default function Contact() {
         <div className="wrap">
           <div className="split" style={{ alignItems: 'stretch' }}>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <p className="eyebrow">Direkt erreichbar</p>
+              <p className="eyebrow">{t('contact.directEyebrow')}</p>
 
               <ul className="qual">
                 <li>
-                  <span>Telefon</span>
+                  <span>{t('contact.phone')}</span>
                   <span>
                     <a href={company.phoneHref}>{company.phone}</a>
                   </span>
                 </li>
 
                 <li>
-                  <span>WhatsApp</span>
+                  <span>{t('contact.whatsapp')}</span>
                   <span>
                     <a
                       href={company.whatsapp}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Chat öffnen
+                      {t('contact.whatsappCta')}
                     </a>
                   </span>
                 </li>
 
                 <li>
-                  <span>E-Mail</span>
+                  <span>{t('contact.email')}</span>
                   <span>
                     <a href={`mailto:${company.email}`}>
                       {company.email}
@@ -86,20 +88,20 @@ export default function Contact() {
                 </li>
 
                 <li>
-                  <span>Adresse</span>
+                  <span>{t('contact.address')}</span>
                   <span>
                     {company.street}, {company.city}
                   </span>
                 </li>
 
                 <li>
-                  <span>Zeiten</span>
-                  <span>24 Stunden, 7 Tage die Woche</span>
+                  <span>{t('contact.hours')}</span>
+                  <span>{t('contact.hoursValue')}</span>
                 </li>
 
                 <li>
-                  <span>Sprachen</span>
-                  <span>Deutsch, Englisch, Türkisch</span>
+                  <span>{t('contact.languages')}</span>
+                  <span>{t('contact.languagesValue')}</span>
                 </li>
               </ul>
 
@@ -114,7 +116,7 @@ export default function Contact() {
               >
                 <div style={{ display: 'grid', gap: '1.25rem' }}>
                   <p className="eyebrow" style={{ width: '100%' }}>
-                    Persönlich erreichbar
+                    {t('contact.personalEyebrow')}
                   </p>
 
                   <h2
@@ -126,7 +128,7 @@ export default function Contact() {
                       margin: 0,
                     }}
                   >
-                    Keine anonyme Zentrale.
+                    {t('contact.personalH2')}
                   </h2>
 
                   <p
@@ -136,10 +138,7 @@ export default function Contact() {
                       maxWidth: '42ch',
                     }}
                   >
-                    Ihre Anfrage landet direkt bei der Person, die den
-                    Einsatz plant und begleitet. Dadurch bleiben Wege kurz
-                    und Absprachen klar – auch wenn sich der Termin
-                    kurzfristig ändert.
+                    {t('contact.personalText')}
                   </p>
                 </div>
 
@@ -147,21 +146,20 @@ export default function Contact() {
                   className="btn btn--brass"
                   href={company.phoneHref}
                 >
-                  Jetzt anrufen →
+                  {t('contact.callCta')}
                 </a>
               </div>
             </div>
 
             <div>
-              <p className="eyebrow">Anfrageformular</p>
+              <p className="eyebrow">{t('contact.formEyebrow')}</p>
 
               {sent && (
                 <p
                   className="lead"
                   style={{ color: 'var(--brass)' }}
                 >
-                  Ihr E-Mail-Programm hat sich geöffnet. Bitte senden Sie die
-                  vorbereitete Nachricht ab.
+                  {t('contact.sentMessage')}
                 </p>
               )}
 
@@ -170,7 +168,7 @@ export default function Contact() {
                 onSubmit={handleSubmit}
               >
                 <div className="field">
-                  <label htmlFor="name">Name</label>
+                  <label htmlFor="name">{t('contact.labelName')}</label>
                   <input
                     id="name"
                     name="name"
@@ -180,7 +178,7 @@ export default function Contact() {
                 </div>
 
                 <div className="field">
-                  <label htmlFor="email">E-Mail</label>
+                  <label htmlFor="email">{t('contact.labelEmail')}</label>
                   <input
                     id="email"
                     name="email"
@@ -191,7 +189,7 @@ export default function Contact() {
                 </div>
 
                 <div className="field">
-                  <label htmlFor="phone">Telefon</label>
+                  <label htmlFor="phone">{t('contact.labelPhone')}</label>
                   <input
                     id="phone"
                     name="phone"
@@ -201,7 +199,7 @@ export default function Contact() {
                 </div>
 
                 <div className="field">
-                  <label htmlFor="service">Leistung</label>
+                  <label htmlFor="service">{t('contact.labelService')}</label>
 
                   <select
                     id="service"
@@ -217,15 +215,15 @@ export default function Contact() {
                       </option>
                     ))}
 
-                    <option value="Etwas anderes">
-                      Etwas anderes
+                    <option value={t('contact.otherOption')}>
+                      {t('contact.otherOption')}
                     </option>
                   </select>
                 </div>
 
                 <div className="field">
                   <label htmlFor="date">
-                    Datum und Uhrzeit
+                    {t('contact.labelDate')}
                   </label>
 
                   <input
@@ -236,33 +234,34 @@ export default function Contact() {
                 </div>
 
                 <div className="field">
-                  <label htmlFor="from">Abholort</label>
+                  <label htmlFor="from">{t('contact.labelFrom')}</label>
 
                   <input
                     id="from"
                     name="from"
-                    placeholder="z. B. Flughafen München, Terminal 2"
+                    placeholder={t('contact.fromPlaceholder')}
                   />
                 </div>
 
                 <div className="field">
-                  <label htmlFor="to">Ziel</label>
+                  <label htmlFor="to">{t('contact.labelTo')}</label>
 
                   <input
                     id="to"
                     name="to"
-                    placeholder="z. B. Hotel Bayerischer Hof"
+                    placeholder={t('contact.toPlaceholder')}
+                    defaultValue={ziel}
                   />
                 </div>
 
                 <div className="field">
-                  <label htmlFor="message">Nachricht</label>
+                  <label htmlFor="message">{t('contact.labelMessage')}</label>
 
                   <textarea
                     id="message"
                     name="message"
                     rows={5}
-                    placeholder="Anzahl Gäste, Gepäck, besondere Anforderungen"
+                    placeholder={t('contact.messagePlaceholder')}
                   />
                 </div>
 
@@ -270,19 +269,18 @@ export default function Contact() {
                   className="btn btn--brass"
                   type="submit"
                 >
-                  Anfrage senden →
+                  {t('contact.submitCta')}
                 </button>
 
                 <p className="form__note">
-                  Ihre Angaben werden ausschliesslich zur Bearbeitung dieser
-                  Anfrage verwendet.
+                  {t('contact.formNote')}
                 </p>
               </form>
             </div>
           </div>
 
           <div style={{ marginTop: 'clamp(3rem, 6vw, 5rem)' }}>
-            <p className="eyebrow">Standort</p>
+            <p className="eyebrow">{t('contact.locationEyebrow')}</p>
 
             <div
               style={{
@@ -318,7 +316,7 @@ export default function Contact() {
                     className="dossier__k"
                     style={{ margin: 0 }}
                   >
-                    Büro bei München
+                    {t('contact.officeLabel')}
                   </p>
 
                   <p
@@ -342,7 +340,7 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   style={{ marginLeft: 'auto' }}
                 >
-                  Route öffnen →
+                  {t('contact.routeCta')}
                 </a>
               </div>
             </div>

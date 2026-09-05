@@ -1,22 +1,24 @@
 import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
-
-const links = [
-  { to: '/', label: 'Start' },
-  { to: '/leistungen', label: 'Leistungen' },
-  { to: '/fahrer', label: 'Ihr Fahrer' },
-  { to: '/flotte', label: 'Flotte' },
-  { to: '/anlaesse', label: 'Anlässe' },
-  { to: '/kontakt', label: 'Kontakt' },
-]
+import { useLanguage } from '../i18n/LanguageContext'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
+  const { t, lang, setLang } = useLanguage()
+
+  const links = [
+    { to: '/', label: t('nav.start') },
+    { to: '/leistungen', label: t('nav.leistungen') },
+    { to: '/fahrer', label: t('nav.fahrer') },
+    { to: '/flotte', label: t('nav.flotte') },
+    { to: '/anlaesse', label: t('nav.anlaesse') },
+    { to: '/kontakt', label: t('nav.kontakt') },
+  ]
 
   return (
     <header className="hdr">
       <div className="hdr__in" style={{ position: 'relative' }}>
-        <Link className="logo" to="/" onClick={() => setOpen(false)} aria-label="BCO Solutions – Startseite">
+        <Link className="logo" to="/" onClick={() => setOpen(false)} aria-label={t('header.logoAria')}>
           <span className="logo__mark" aria-hidden="true">
             <span>BUSINESS</span>
             <span>CONNECT</span>
@@ -36,15 +38,19 @@ export default function Header() {
               {l.label}
             </NavLink>
           ))}
+          <div className="hdr__lang">
+            <button type="button" aria-pressed={lang === 'de'} onClick={() => setLang('de')}>DE</button>
+            <button type="button" aria-pressed={lang === 'en'} onClick={() => setLang('en')}>EN</button>
+          </div>
         </nav>
 
         <button
           className="burger"
           aria-expanded={open}
-          aria-label={open ? 'Menü schliessen' : 'Menü öffnen'}
+          aria-label={open ? t('header.menuClose') : t('header.menuOpen')}
           onClick={() => setOpen((v) => !v)}
         >
-          {open ? 'Schliessen' : 'Menü'}
+          {open ? t('header.menuCloseLabel') : t('header.menuOpenLabel')}
         </button>
       </div>
     </header>

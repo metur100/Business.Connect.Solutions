@@ -1,18 +1,19 @@
 import { Link, useParams } from 'react-router-dom'
-import { services } from '../data/content'
+import { useLanguage } from '../i18n/LanguageContext'
 import AnyQuestions from '../components/AnyQuestions'
 
 export default function ServiceDetail() {
   const { slug } = useParams()
-  const service = services.find((s) => s.slug === slug)
+  const { t, content } = useLanguage()
+  const service = content.services.find((s) => s.slug === slug)
 
   if (!service) {
     return (
       <section className="section">
         <div className="wrap">
-          <h1 className="h">Diese Leistung gibt es nicht</h1>
-          <p className="muted">Der Link führt ins Leere. Zurück zur Übersicht aller Leistungen.</p>
-          <Link className="btn" to="/leistungen">Alle Leistungen →</Link>
+          <h1 className="h">{t('serviceDetail.notFoundH1')}</h1>
+          <p className="muted">{t('serviceDetail.notFoundText')}</p>
+          <Link className="btn" to="/leistungen">{t('serviceDetail.backCta')}</Link>
         </div>
       </section>
     )
@@ -22,7 +23,7 @@ export default function ServiceDetail() {
     <>
       <div className="phead">
         <div className="wrap">
-          <p className="eyebrow">{service.code} · Leistung</p>
+          <p className="eyebrow">{service.code} · {t('services.eyebrow')}</p>
           <h1>{service.title}</h1>
           <p>{service.teaser}</p>
         </div>
@@ -31,7 +32,7 @@ export default function ServiceDetail() {
       <section className="section">
         <div className="wrap split">
           <div>
-            <p className="eyebrow">Umfang</p>
+            <p className="eyebrow">{t('serviceDetail.scopeEyebrow')}</p>
             <ul className="qual">
               {service.points.map((p) => (
                 <li key={p}>
@@ -46,8 +47,8 @@ export default function ServiceDetail() {
               <p className={b === service.body[0] ? 'lead' : 'muted'} key={b}>{b}</p>
             ))}
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginTop: '1.5rem' }}>
-              <Link className="btn" to="/kontakt">Diese Leistung anfragen →</Link>
-              <Link className="btn btn--ghost" to="/leistungen">Alle Leistungen</Link>
+              <Link className="btn" to="/kontakt">{t('serviceDetail.cta')}</Link>
+              <Link className="btn btn--ghost" to="/leistungen">{t('serviceDetail.allServices')}</Link>
             </div>
           </div>
         </div>

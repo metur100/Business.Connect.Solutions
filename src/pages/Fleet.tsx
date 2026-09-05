@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { fleet, onDemand } from '../data/content'
+import { useLanguage } from '../i18n/LanguageContext'
 import AnyQuestions from '../components/AnyQuestions'
 import Reveal from '../components/Reveal'
 
@@ -9,28 +9,27 @@ const fleetImages = [
     alt: 'Schwarze Mercedes-Benz E-Klasse für geschäftliche Chauffeurfahrten in München',
   },
   {
-    src: `${import.meta.env.BASE_URL}images/bco-fleet-s-class.png`,
-    alt: 'Schwarze Mercedes-Benz S-Klasse vor einem eleganten Münchner Hotel',
+    src: `${import.meta.env.BASE_URL}images/img12.jpeg`,
+    alt: 'Die für BCO Solutions bestellte Mercedes-Benz S-Klasse',
   },
   {
-    src: `${import.meta.env.BASE_URL}images/bco-fleet-v-class.png`,
-    alt: 'Schwarze Mercedes-Benz V-Klasse für Gruppen- und Konferenztransfers',
+    src: `${import.meta.env.BASE_URL}images/img3.jpeg`,
+    alt: 'Die eigene Mercedes-Benz V-Klasse von BCO Solutions',
   },
 ]
 
 export default function Fleet() {
+  const { t, content } = useLanguage()
+  const { fleet, onDemand } = content
   return (
     <>
       <div className="phead">
         <div className="wrap">
-          <p className="eyebrow">Fuhrpark</p>
+          <p className="eyebrow">{t('fleet.eyebrow')}</p>
 
-          <h1>Limousine, Van oder Konvoi</h1>
+          <h1>{t('fleet.h1')}</h1>
 
-          <p>
-            Die Standardfahrzeuge stehen bereit. Alles darüber hinaus – vom Maybach bis zum Reisebus –
-            beschaffe ich auf Anfrage.
-          </p>
+          <p>{t('fleet.intro')}</p>
         </div>
       </div>
 
@@ -44,11 +43,14 @@ export default function Fleet() {
                 <Reveal className="fleet__card" key={vehicle.name}>
                   <div className="fleet__img">
                     {image ? (
-                      <img
-                        src={image.src}
-                        alt={image.alt}
-                        loading="lazy"
-                      />
+                      <>
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          loading="lazy"
+                        />
+                        <span className="fleet__badge">BCO Solutions</span>
+                      </>
                     ) : (
                       <div className="fleet__ph">Fahrzeugbild</div>
                     )}
@@ -64,7 +66,7 @@ export default function Fleet() {
                     <p>{vehicle.text}</p>
 
                     <Link className="btn" to="/kontakt">
-                      Fahrzeug anfragen →
+                      {t('fleet.cta')}
                     </Link>
                   </div>
                 </Reveal>
@@ -79,7 +81,7 @@ export default function Fleet() {
               border: '1px solid rgba(185, 148, 90, 0.4)',
             }}
           >
-            <p className="eyebrow">Auf Anfrage</p>
+            <p className="eyebrow">{t('fleet.ondemandEyebrow')}</p>
 
             <h2
               className="h3"
@@ -88,12 +90,11 @@ export default function Fleet() {
                 fontWeight: 300,
               }}
             >
-              On demand
+              {t('fleet.ondemandH2')}
             </h2>
 
             <p className="muted" style={{ maxWidth: '54ch' }}>
-              Diese Fahrzeuge stelle ich auf Anfrage bereit. Bitte planen Sie etwas Vorlauf ein,
-              damit Fahrzeug und Fahrer sicher verfügbar sind.
+              {t('fleet.ondemandText')}
             </p>
 
             <ul
@@ -115,7 +116,7 @@ export default function Fleet() {
               to="/kontakt"
               style={{ marginTop: '1.5rem' }}
             >
-              Fahrzeug anfragen →
+              {t('fleet.cta')}
             </Link>
           </div>
         </div>

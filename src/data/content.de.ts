@@ -1,26 +1,9 @@
-export const company = {
-  name: 'BCO Solutions',
-  legal: 'Business Connect Solutions',
-  phone: '+49 151 4122 4419',
-  phoneHref: 'tel:+4915141224419',
-  whatsapp: 'https://wa.me/4915141224419',
-  email: 'info@bco-solutions.de',
-  street: 'Professor-Messerschmitt-Straße 3a',
-  city: '85579 Neubiberg bei München',
-  country: 'Deutschland',
-  instagram: 'https://www.instagram.com/bcosolutions/',
-  linkedin: 'https://www.linkedin.com/company/bco-solutions/',
-  facebook: 'https://www.facebook.com/profile.php?id=61584745757604',
-}
-
 export const dossier = [
   { k: 'Im Dienst seit', v: '2006', n: 'Chauffeur — über 20 Jahre für internationale Kunden' },
   { k: 'Sicherheitsfahrer seit', v: '2012', n: 'Sachsenring inkl. Sonderschutzfahrzeuge, Mercedes Guard' },
   { k: 'Erreichbarkeit', v: '24/7', n: 'Eine Nummer, eine Ansprechperson — auch kurzfristig' },
-  { k: 'Sprachen', v: 'DE / EN / TR', n: 'Einsätze in Europa, Asien und der Schweiz' },
+  { k: 'Sprachen', v: 'DE / EN', n: 'Einsätze in Europa, Asien und der Schweiz' },
 ]
-
-
 
 export type Service = {
   code: string
@@ -75,14 +58,14 @@ export const services: Service[] = [
   },
   {
     code: 'S-04',
-    slug: 'einzelpersonen-und-gruppen',
-    title: 'Einzelpersonen und Gruppen',
+    slug: 'gruppen',
+    title: 'Gruppen',
     teaser: 'Gruppentransport ist keine Beförderung, sondern Koordination.',
     body: [
       'Bei Kongressen, Roadshows oder Grossveranstaltungen müssen viele Gäste gleichzeitig bewegt werden. Wir planen Abfolge, Fahrzeugmix und Übergabepunkte im Voraus.',
-      'Vom Einzelfahrzeug bis zum Konvoi mit Sprintern und Reisebussen – aus einer Hand disponiert.',
+      'Vom Einzelfahrzeug bis zur mehrköpfigen Flotte mit Sprintern und Reisebussen – aus einer Hand disponiert.',
     ],
-    points: ['Konvoi- und Shuttleplanung', 'Sprinter und Reisebusse auf Anfrage', 'Feste Einsatzleitung vor Ort', 'Namenslisten und Zeitfenster'],
+    points: ['Flotten- und Shuttleplanung', 'Sprinter und Reisebusse auf Anfrage', 'Feste Einsatzleitung vor Ort', 'Namenslisten und Zeitfenster'],
   },
   {
     code: 'S-05',
@@ -108,34 +91,23 @@ export const services: Service[] = [
   },
   {
     code: 'S-07',
-    slug: 'dispositionssoftware-tracking-systeme',
-    title: 'Dispositionssoftware & Tracking',
-    teaser: 'Mobilitätsoperationen transparent und vollständig kontrollierbar.',
+    slug: 'concierge-und-persoenliche-assistenz',
+    title: 'Concierge & persönliche Assistenz',
+    teaser: 'Persönliche Unterstützung für Reisen, Termine, Gäste und besondere Wünsche.',
     body: [
-      'Die technologische Infrastruktur macht jeden Einsatz nachvollziehbar: Disposition, Fahrzeugstatus und Ankunftszeiten in einem System.',
-      'Auf Wunsch erhalten Auftraggeber Zugriff auf Live-Status und Nachweisberichte.',
+      'Eine professionelle Reise endet nicht an der Fahrzeugtür. Auf Wunsch unterstützt BCO auch bei der Koordination von Hotels, Terminen, Restaurants, Veranstaltungen und individuellen Reiseplänen.',
+      'Ein Ansprechpartner behält den Überblick und stimmt Chauffeurservice, Transfers, Gastgeber, Sicherheitsanforderungen und weitere Dienstleister aufeinander ab.',
     ],
-    points: ['Live-Tracking der Fahrzeuge', 'Digitale Disposition', 'Nachweis- und Abrechnungsberichte', 'Schnittstellen für Firmenkunden'],
+    points: [
+      'Persönliche Reiseassistenz',
+      'Hotel- und Restaurantkoordination',
+      'Organisation von Terminen und Transfers',
+      'Gästebetreuung und VIP-Handling',
+      'Event- und Veranstaltungskoordination',
+      'Yacht-, Jet- und Helikopteranfragen',
+      'Individuelle Sonderwünsche',
+    ],
   },
-  {
-  code: 'S-08',
-  slug: 'concierge-und-persoenliche-assistenz',
-  title: 'Concierge & persönliche Assistenz',
-  teaser: 'Persönliche Unterstützung für Reisen, Termine, Gäste und besondere Wünsche.',
-  body: [
-    'Eine professionelle Reise endet nicht an der Fahrzeugtür. Auf Wunsch unterstützt BCO auch bei der Koordination von Hotels, Terminen, Restaurants, Veranstaltungen und individuellen Reiseplänen.',
-    'Ein Ansprechpartner behält den Überblick und stimmt Chauffeurservice, Transfers, Gastgeber, Sicherheitsanforderungen und weitere Dienstleister aufeinander ab.',
-  ],
-  points: [
-    'Persönliche Reiseassistenz',
-    'Hotel- und Restaurantkoordination',
-    'Organisation von Terminen und Transfers',
-    'Gästebetreuung und VIP-Handling',
-    'Event- und Veranstaltungskoordination',
-    'Yacht-, Jet- und Helikopteranfragen',
-    'Individuelle Sonderwünsche',
-  ],
-},
 ]
 
 export const solutions = [
@@ -146,9 +118,7 @@ export const solutions = [
   { title: 'VIP & Protokollösungen', text: 'Abstimmung mit Protokoll, Sicherheitsdiensten und Veranstaltern.' },
   { title: 'Integrierte Mobilitäts- & Operationslösungen', text: 'Transport, Personal und Technik als ein gesteuertes System.' },
   { title: 'VIP-Sicherheits- und Risikomanagement', text: 'Lagebewertung, Routenplanung und geschultes Sicherheitspersonal.' },
-  {
-  title: 'Private Reisen & Concierge Management',
-  text: 'Individuell geplante Reisen mit persönlicher Assistenz, Chauffeurservice und laufender Koordination.',},
+  { title: 'Private Reisen & Concierge Management', text: 'Individuell geplante Reisen mit persönlicher Assistenz, Chauffeurservice und laufender Koordination.' },
 ]
 
 export const fleet = [
@@ -157,16 +127,74 @@ export const fleet = [
   { name: 'Mercedes-Benz V-Klasse', seats: 'Bis zu 6 Passagiere', text: 'Für Gruppen, Gepäck und mehrtägige Begleitungen, ohne auf eine komfortable Ankunft zu verzichten.' },
 ]
 
-export const onDemand = ['Mercedes-Maybach', 'Range Rover', 'Rolls-Royce', 'Bentley', 'Mercedes Sprinter', 'Reisebusse', 'Sonderschutzfahrzeuge']
+export const onDemand = ['Mercedes-Maybach', 'Mercedes G-Klasse', 'Range Rover', 'Rolls-Royce', 'Bentley', 'Mercedes Sprinter', 'Reisebusse', 'Sonderschutzfahrzeuge']
 
 export const regions = ['München', 'Nürnberg', 'Stuttgart', 'Frankfurt', 'Berlin', 'Hamburg', 'Düsseldorf', 'Salzburg']
 export const worldwide = ['Monaco', 'St. Tropez', 'Courchevel', 'Davos', 'London', 'Mailand', 'Wien', 'Zürich']
 
-export const events = [
-  { title: 'Münchner Sicherheitskonferenz', date: 'Februar 2026', city: 'München', text: 'Delegationen, Protokollfahrten und Sicherheitsbegleitung im gesamten Konferenzumfeld. Wir sind seit Jahren im Einsatz.' },
-  { title: 'Oktoberfest', date: '19.09. — 04.10.2026', city: 'München', text: 'Zelt-Transfers, Firmenabende und Gästebetreuung – mit Fahrern, die die Sperrungen rund um die Theresienwiese kennen.' },
-  { title: 'Internationale Handwerksmesse', date: 'März 2026', city: 'München', text: 'Aussteller- und Besucherlogistik zwischen Messe München, Hotels und Flughafen.' },
-  { title: 'IFAT Munich', date: 'Mai 2026', city: 'München', text: 'Die Weltleitmesse für Umwelttechnologien – Gruppenshuttles und Standbetreuung.' },
+export type EventItem = {
+  slug: string
+  title: string
+  date: string
+  city: string
+  text: string
+  image: string
+  body: string[]
+}
+
+export const events: EventItem[] = [
+  {
+    slug: 'nfl-munich-game',
+    title: 'NFL Munich Game 2026',
+    date: 'So. 15.11.2026 · 15:30 Uhr',
+    city: 'München',
+    text: 'Patriots vs. Lions in der Allianz Arena – Stadion-Transfers und Hospitality-Shuttles für Gäste und Sponsoren.',
+    image: 'termin1.png',
+    body: [
+      'Zum dritten NFL-Spiel in München füllt sich die Allianz Arena am 15. November 2026 mit internationalen Gästen – Anpfiff ist um 15:30 Uhr, wenn die New England Patriots auf die Detroit Lions treffen.',
+      'Rund um Spieltage dieser Grössenordnung sind Parkplätze rar, Strassen gesperrt und Taxistände überlastet. Wir übernehmen den Transfer von Hotel oder Flughafen direkt zum Stadion, holen Sie nach dem Schlusspfiff wieder ab und stimmen Ankunftszeiten mit Hospitality-Programmen und VIP-Bereichen ab.',
+      'Für Firmengruppen und Sponsoren-Delegationen disponieren wir mehrere Fahrzeuge gleichzeitig, inklusive fester Einsatzleitung vor Ort.',
+    ],
+  },
+  {
+    slug: 'oktoberfest-muenchen',
+    title: 'Oktoberfest München 2026',
+    date: '19.09. — 04.10.2026',
+    city: 'München',
+    text: 'Zelt-Transfers, Firmenabende und Gästebetreuung – mit Fahrern, die die Sperrungen rund um die Theresienwiese kennen.',
+    image: 'termin2.png',
+    body: [
+      'Zwei Wochen lang verwandelt sich die Theresienwiese in die grösste Volksfestbühne der Welt – mit ihr auch der Verkehr rings um die Wiesn: großräumige Sperrungen, überlastete Taxistände und ausgebuchte Hotels.',
+      'Für ein einzelnes Zeltabendessen genügt oft ein Fahrzeug. Holt eine Firma dagegen mehrere Gäste zeitgleich von unterschiedlichen Hotels ab, wird daraus schnell eine kleine Flotte – genau dafür disponieren wir im Vorfeld Fahrzeugmix, Reihenfolge und Übergabepunkte.',
+      'Wir kennen die Zufahrtswege und Sperrzeiten rund um die Theresienwiese und planen Abholzeiten so, dass Wartezeit für Ihre Gäste entfällt.',
+    ],
+  },
+  {
+    slug: 'expo-real-muenchen',
+    title: 'Expo Real 2026',
+    date: '5.–7. Oktober 2026',
+    city: 'München',
+    text: 'Internationale Fachmesse für Immobilien und Investitionen – Aussteller- und Delegationslogistik zwischen Messe, Hotels und Flughafen.',
+    image: 'termin3.png',
+    body: [
+      'Die Expo Real bringt jeden Oktober die internationale Immobilien- und Investmentbranche auf das Gelände der Messe München – mit dichtem Terminplan zwischen Empfängen, Standterminen und Networking-Abenden in der ganzen Stadt.',
+      'Aussteller und Delegationen bewegen sich meist im Halbstundentakt zwischen Hotel, Messehalle und Abendveranstaltung. Wir planen diese Taktung im Voraus und stellen sicher, dass der Fahrer vor Ort ist, bevor der Termin endet.',
+      'Für Unternehmen mit mehreren Standbesuchern disponieren wir auch mehrere Fahrzeuge parallel, mit fester Ansprechperson für die gesamte Messewoche.',
+    ],
+  },
+  {
+    slug: 'electronica-muenchen',
+    title: 'Electronica München 2026',
+    date: '10.–13. November 2026',
+    city: 'München',
+    text: 'Weltleitmesse der Elektronikbranche – Gruppenshuttles und Standbetreuung für internationale Delegationen.',
+    image: 'termin4.png',
+    body: [
+      'Die Electronica zählt zu den grössten Fachmessen der Elektronikbranche weltweit und zieht Aussteller und Delegationen aus allen Kontinenten nach München.',
+      'Vier Messetage bedeuten dichten Programmablauf zwischen Flughafenankunft, Hotel, Messestand und Abendveranstaltungen – oft für Gruppen, die zeitversetzt anreisen. Wir koordinieren Abholzeiten je nach Ankunft und stellen bei Bedarf mehrere Fahrzeuge gleichzeitig.',
+      'Auf Wunsch übernehmen wir auch die Standbetreuung ankommender Gäste, von der Begrüssung am Flughafen bis zur Übergabe am Messestand.',
+    ],
+  },
 ]
 
 export const qualifications = [
@@ -174,11 +202,10 @@ export const qualifications = [
   ['2012', 'Ausgebildeter Sicherheitsfahrer'],
   ['Training', 'Mehrtägiges Fahrsicherheitstraining Sachsenring, inkl. Sonderschutzfahrzeuge'],
   ['Programm', 'Mercedes Guard Programm'],
-  ['§34a', 'Sachkunde- und Unterrichtungsnachweis nach GewO'],
   ['Erste Hilfe', 'Aktuelle Erste-Hilfe-Kenntnisse'],
   ['Einsätze', 'WEF Davos, Münchner Sicherheitskonferenz, Regierungsdelegationen'],
   ['Regionen', 'Europa, Asien und die Schweiz'],
-  ['Sprachen', 'Deutsch, Englisch, Türkisch'],
+  ['Sprachen', 'Deutsch, Englisch'],
 ]
 
 export const faqs = [
@@ -187,6 +214,6 @@ export const faqs = [
   { q: 'Bekomme ich immer denselben Fahrer?', a: 'Ja, das ist der Kern des Angebots. Statt einer anonymen Fahrzeugflotte erhalten Sie einen persönlichen, fest zugeordneten Fahrer – kurze Wege, klare Absprachen, Vertrauen.' },
   { q: 'Ist der Service rund um die Uhr verfügbar?', a: 'Ja. Anfragen, Änderungen und kurzfristige Einsätze nehmen wir 24 Stunden am Tag entgegen, per Telefon oder WhatsApp.' },
   { q: 'Was unterscheidet einen Sicherheitsfahrer von einem Chauffeur?', a: 'Ein Sicherheitsfahrer ist zusätzlich für defensives und ausweichendes Fahren, Routenbewertung und den Umgang mit Sonderschutzfahrzeugen ausgebildet. Grundlage sind Trainings am Sachsenring und das Mercedes Guard Programm.' },
-  { q: 'Kann ich Fahrzeuge buchen, die nicht in der Flotte stehen?', a: 'Ja. Mercedes-Maybach, Range Rover, Rolls-Royce, Bentley, Sprinter und Reisebusse stellen wir auf Anfrage bereit. Bitte planen Sie hierfür etwas Vorlauf ein.' },
+  { q: 'Kann ich Fahrzeuge buchen, die nicht in der Flotte stehen?', a: 'Ja. Mercedes-Maybach, Mercedes G-Klasse, Range Rover, Rolls-Royce, Bentley, Sprinter und Reisebusse stellen wir auf Anfrage bereit. Bitte planen Sie hierfür etwas Vorlauf ein.' },
   { q: 'Wie buche ich?', a: 'Rufen Sie an, schreiben Sie per WhatsApp oder senden Sie das Anfrageformular. Sie erhalten eine verbindliche Bestätigung mit Fahrer, Fahrzeug und Zeitfenster.' },
 ]

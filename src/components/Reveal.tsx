@@ -1,10 +1,11 @@
 import { useEffect, useRef, type ReactNode } from 'react'
 
-export default function Reveal({ children, as: Tag = 'div', className = '', delay = 0 }: {
+export default function Reveal({ children, as: Tag = 'div', className = '', delay = 0, ...rest }: {
   children: ReactNode
   as?: any
   className?: string
   delay?: number
+  [key: string]: any
 }) {
   const ref = useRef<any>(null)
 
@@ -26,7 +27,7 @@ export default function Reveal({ children, as: Tag = 'div', className = '', dela
   }, [delay])
 
   return (
-    <Tag ref={ref} className={`reveal ${className}`}>
+    <Tag ref={ref} className={`reveal ${className}`} {...rest}>
       {children}
     </Tag>
   )

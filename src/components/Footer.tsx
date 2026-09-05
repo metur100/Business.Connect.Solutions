@@ -1,17 +1,20 @@
 import { Link } from 'react-router-dom'
-import { company, services } from '../data/content'
+import { company } from '../data/company'
+import { useLanguage } from '../i18n/LanguageContext'
 
 export default function Footer() {
+  const { t, content } = useLanguage()
+  const { services } = content
   return (
     <footer className="ftr">
       <div className="wrap">
         <div className="ftr__grid">
           <div>
-            <h4>Kontakt</h4>
+            <h4>{t('footer.contact')}</h4>
             <ul>
               <li><a href={company.phoneHref}>{company.phone}</a></li>
               <li><a href={`mailto:${company.email}`}>{company.email}</a></li>
-              <li><a href={company.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+              <li><a href={company.whatsapp} target="_blank" rel="noopener noreferrer">{t('footer.whatsapp')}</a></li>
               <li style={{ marginTop: '0.5rem', lineHeight: 1.5 }}>
                 {company.street}<br />{company.city}<br />{company.country}
               </li>
@@ -19,7 +22,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4>Leistungen</h4>
+            <h4>{t('footer.services')}</h4>
             <ul>
               {services.map((s) => (
                 <li key={s.slug}>
@@ -30,35 +33,35 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4>Seiten</h4>
+            <h4>{t('footer.pages')}</h4>
             <ul>
-              <li><Link to="/leistungen">Leistungen</Link></li>
-              <li><Link to="/fahrer">Ihr Fahrer</Link></li>
-              <li><Link to="/flotte">Flotte</Link></li>
-              <li><Link to="/anlaesse">Anlässe in München</Link></li>
-              <li><Link to="/kontakt">Anfrage & Kontakt</Link></li>
+              <li><Link to="/leistungen">{t('footer.services')}</Link></li>
+              <li><Link to="/fahrer">{t('footer.driverPage')}</Link></li>
+              <li><Link to="/flotte">{t('footer.fleetPage')}</Link></li>
+              <li><Link to="/anlaesse">{t('footer.eventsPage')}</Link></li>
+              <li><Link to="/kontakt">{t('footer.contactPage')}</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4>Folgen</h4>
+            <h4>{t('footer.follow')}</h4>
             <ul>
               <li><a href={company.instagram} target="_blank" rel="noopener noreferrer">Instagram</a></li>
               <li><a href={company.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
               <li><a href={company.facebook} target="_blank" rel="noopener noreferrer">Facebook</a></li>
             </ul>
-            <h4 style={{ marginTop: '1.75rem' }}>Rechtliches</h4>
+            <h4 style={{ marginTop: '1.75rem' }}>{t('footer.legal')}</h4>
             <ul>
-              <li><a href="/impressum">Impressum</a></li>
-              <li><a href="/datenschutz">Datenschutz</a></li>
-              <li><a href="/agb">AGB</a></li>
+              <li><a href="/impressum">{t('footer.impressum')}</a></li>
+              <li><a href="/datenschutz">{t('footer.datenschutz')}</a></li>
+              <li><a href="/agb">{t('footer.agb')}</a></li>
             </ul>
           </div>
         </div>
 
         <div className="ftr__bottom">
           <span>© {new Date().getFullYear()} {company.legal}</span>
-          <span>Professionelle Mobilität — Globale Standards</span>
+          <span>{t('footer.tagline')}</span>
         </div>
       </div>
     </footer>

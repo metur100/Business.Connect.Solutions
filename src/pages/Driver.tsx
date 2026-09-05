@@ -1,22 +1,24 @@
 import { Link } from 'react-router-dom'
-import { qualifications, dossier } from '../data/content'
+import { useLanguage } from '../i18n/LanguageContext'
 import AnyQuestions from '../components/AnyQuestions'
 import Reveal from '../components/Reveal'
 
 export default function Driver() {
+  const { t, content } = useLanguage()
+  const { qualifications, dossier } = content
+
   return (
     <>
       <div className="phead">
         <div className="wrap">
-          <p className="eyebrow">Chauffeur- und Sicherheitsfahrer</p>
+          <p className="eyebrow">{t('driver.eyebrow')}</p>
 
           <h1>
-            Ihr persönlicher Fahrer für höchste Sicherheitsansprüche
+            {t('driver.h1')}
           </h1>
 
           <p>
-            Seit 2006 als Chauffeur tätig, seit 2012 zusätzlich als
-            ausgebildeter Sicherheitsfahrer.
+            {t('driver.intro')}
           </p>
         </div>
       </div>
@@ -37,33 +39,26 @@ export default function Driver() {
         <div className="wrap">
           <div className="split">
             <div>
-              <p className="eyebrow">Zur Person</p>
+              <p className="eyebrow">{t('driver.personEyebrow')}</p>
 
               <h2 className="h">
-                20 Jahre Erfahrung,
+                {t('driver.personH2a')}
                 <br />
-                persönlich im Einsatz
+                {t('driver.personH2b')}
               </h2>
             </div>
 
             <Reveal>
               <p className="lead">
-                Meine Ausbildung umfasst mehrtägige Fahrsicherheitstrainings
-                am Fahrsicherheitszentrum Sachsenring – inklusive Training für
-                Sonderschutzfahrzeuge – sowie das Mercedes Guard Programm.
+                {t('driver.lead')}
               </p>
 
               <p className="muted">
-                Ich habe über viele Jahre Vorstände, Delegationen,
-                Privatpersonen und internationale Gäste sicher begleitet –
-                unter anderem im Rahmen der Münchner Sicherheitskonferenz sowie
-                bei Einsätzen für Regierungsdelegationen im In- und Ausland.
+                {t('driver.muted1')}
               </p>
 
               <p className="muted">
-                Seit über 20 Jahren betreue ich internationale Kunden mit
-                höchstem Anspruch an Diskretion, Sicherheit und klare
-                Kommunikation.
+                {t('driver.muted2')}
               </p>
 
               <Link
@@ -71,7 +66,7 @@ export default function Driver() {
                 to="/kontakt"
                 style={{ marginTop: '1rem' }}
               >
-                Gespräch vereinbaren →
+                {t('driver.cta')}
               </Link>
             </Reveal>
           </div>
@@ -84,7 +79,7 @@ export default function Driver() {
           >
             <img
               src={`${import.meta.env.BASE_URL}images/bco-driver-service.png`}
-              alt="Professioneller Chauffeur neben einer schwarzen Limousine"
+              alt={t('driver.imageAlt')}
               style={{
                 width: '100%',
                 aspectRatio: '16 / 7',
@@ -106,11 +101,11 @@ export default function Driver() {
               }}
             >
               <span className="dossier__k">
-                Persönliche Betreuung
+                {t('driver.personalCare')}
               </span>
 
               <span className="muted">
-                Ein Fahrer. Klare Absprachen. Diskretion.
+                {t('driver.personalCareText')}
               </span>
             </div>
           </div>
@@ -119,9 +114,9 @@ export default function Driver() {
 
       <section className="section section--dark">
         <div className="wrap">
-          <p className="eyebrow">Qualifikation</p>
+          <p className="eyebrow">{t('driver.qualEyebrow')}</p>
 
-          <h2 className="h">Nachweise und Einsätze</h2>
+          <h2 className="h">{t('driver.qualH2')}</h2>
 
           <ul
             className="qual"

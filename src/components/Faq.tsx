@@ -1,14 +1,16 @@
 import { useState } from 'react'
-import { faqs } from '../data/content'
+import { useLanguage } from '../i18n/LanguageContext'
 
 export default function Faq() {
   const [open, setOpen] = useState<number | null>(0)
+  const { t, content } = useLanguage()
+  const { faqs } = content
 
   return (
     <section className="section" id="faq">
       <div className="wrap">
-        <p className="eyebrow">Häufige Fragen</p>
-        <h2 className="h">Was Kunden vor der ersten Fahrt wissen wollen</h2>
+        <p className="eyebrow">{t('faq.eyebrow')}</p>
+        <h2 className="h">{t('faq.heading')}</h2>
 
         <div className="faq">
           {faqs.map((f, i) => (

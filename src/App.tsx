@@ -9,8 +9,10 @@ import ServiceDetail from './pages/ServiceDetail'
 import Driver from './pages/Driver'
 import Fleet from './pages/Fleet'
 import Events from './pages/Events'
+import EventDetail from './pages/EventDetail'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
+import { useLanguage } from './i18n/LanguageContext'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -19,9 +21,10 @@ function ScrollToTop() {
 }
 
 export default function App() {
+  const { t } = useLanguage()
   return (
     <>
-      <a className="skip" href="#main">Zum Inhalt springen</a>
+      <a className="skip" href="#main">{t('skip')}</a>
       <ScrollToTop />
       <Header />
       <main id="main">
@@ -32,6 +35,7 @@ export default function App() {
           <Route path="/fahrer" element={<Driver />} />
           <Route path="/flotte" element={<Fleet />} />
           <Route path="/anlaesse" element={<Events />} />
+          <Route path="/anlaesse/:slug" element={<EventDetail />} />
           <Route path="/kontakt" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
