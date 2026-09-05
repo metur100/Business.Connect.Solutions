@@ -195,7 +195,11 @@ export default function Home() {
             </p>
             <ul className="chips" style={{ listStyle: 'none', padding: 0 }}>
               {onDemand.map((o) => (
-                <li className="chip" key={o}>{o}</li>
+                <li key={o}>
+                  <Link className="chip" to={`/anfrage?fahrzeug=${encodeURIComponent(o)}`}>
+                    {o}
+                  </Link>
+                </li>
               ))}
             </ul>
             <Link className="btn btn--brass" to="/anfrage" style={{ marginTop: '1.5rem' }}>{t('home.ondemandCta')}</Link>

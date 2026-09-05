@@ -92,8 +92,13 @@ export default function Fleet() {
               }}
             >
               {onDemand.map((vehicle) => (
-                <li className="chip" key={vehicle}>
-                  {vehicle}
+                <li key={vehicle}>
+                  <Link
+                    className="chip"
+                    to={`/anfrage?fahrzeug=${encodeURIComponent(vehicle)}`}
+                  >
+                    {vehicle}
+                  </Link>
                 </li>
               ))}
             </ul>

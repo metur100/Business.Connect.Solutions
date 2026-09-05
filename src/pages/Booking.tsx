@@ -15,8 +15,9 @@ export default function Booking() {
   const { fleet, onDemand, services } = content
   const [searchParams] = useSearchParams()
 
-  const [step, setStep] = useState(1)
-  const [vehicle, setVehicle] = useState<string | null>(searchParams.get('fahrzeug'))
+  const initialVehicle = searchParams.get('fahrzeug')
+  const [step, setStep] = useState(() => (initialVehicle ? 2 : 1))
+  const [vehicle, setVehicle] = useState<string | null>(initialVehicle)
   const [form, setForm] = useState({ ...emptyForm, to: searchParams.get('ziel') ?? '' })
   const [sent, setSent] = useState(false)
 
@@ -24,8 +25,20 @@ export default function Booking() {
   const isInitialMount = useRef(true)
 
   useEffect(() => {
+    const f = searchParams.get('fahrzeug')
+    if (f) {
+      setVehicle(f)
+      setStep(2)
+    }
+  }, [searchParams])
+
+  useEffect(() => {
     if (isInitialMount.current) {
       isInitialMount.current = false
+      if (initialVehicle && sectionRef.current) {
+        const topOffset = sectionRef.current.getBoundingClientRect().top + window.scrollY - 80
+        window.scrollTo({ top: Math.max(0, topOffset), behavior: 'smooth' })
+      }
       return
     }
     if (sectionRef.current) {

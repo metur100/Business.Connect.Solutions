@@ -254,6 +254,16 @@ button { font: inherit; }
   letter-spacing: 0.04em;
   white-space: nowrap;
 }
+a.chip {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+a.chip:hover {
+  border-color: var(--brass-lt);
+  color: var(--brass-lt);
+}
 .section--dark .chip { border-color: rgba(242,241,237,0.35); }
 
 /* ---- Signature: the dossier / Einsatzprotokoll strip ---- */
