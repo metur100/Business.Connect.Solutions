@@ -36,55 +36,26 @@ export default function Driver() {
       </section>
 
       <section className="section">
-        <div className="wrap">
-          <div className="split">
-            <div>
-              <p className="eyebrow">{t('driver.personEyebrow')}</p>
+        <div className="wrap split" style={{ alignItems: 'stretch' }}>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <p className="eyebrow">{t('driver.personEyebrow')}</p>
 
-              <h2 className="h">
-                {t('driver.personH2a')}
-                <br />
-                {t('driver.personH2b')}
-              </h2>
-            </div>
+            <h2 className="h">
+              {t('driver.personH2a')}
+              <br />
+              {t('driver.personH2b')}
+            </h2>
 
-            <Reveal>
-              <p className="lead">
-                {t('driver.lead')}
-              </p>
-
-              <p className="muted">
-                {t('driver.muted1')}
-              </p>
-
-              <p className="muted">
-                {t('driver.muted2')}
-              </p>
-
-              <Link
-                className="btn"
-                to="/kontakt"
-                style={{ marginTop: '1rem' }}
-              >
-                {t('driver.cta')}
-              </Link>
-            </Reveal>
-          </div>
-
-          <div
-            className="driver-image"
-            style={{
-              marginTop: 'clamp(2.5rem, 6vw, 5rem)',
-            }}
-          >
             <img
               src={`${import.meta.env.BASE_URL}images/bco-driver-service.png`}
               alt={t('driver.imageAlt')}
               style={{
+                flex: 1,
+                minHeight: 240,
                 width: '100%',
-                aspectRatio: '16 / 7',
                 objectFit: 'cover',
                 objectPosition: 'center',
+                marginTop: 'clamp(1.5rem, 4vw, 2.5rem)',
               }}
               loading="lazy"
             />
@@ -109,6 +80,28 @@ export default function Driver() {
               </span>
             </div>
           </div>
+
+          <Reveal>
+            <p className="lead">
+              {t('driver.lead')}
+            </p>
+
+            <p className="muted">
+              {t('driver.muted1')}
+            </p>
+
+            <p className="muted">
+              {t('driver.muted2')}
+            </p>
+
+            <Link
+              className="btn"
+              to="/kontakt"
+              style={{ marginTop: '1rem' }}
+            >
+              {t('driver.cta')}
+            </Link>
+          </Reveal>
         </div>
       </section>
 
