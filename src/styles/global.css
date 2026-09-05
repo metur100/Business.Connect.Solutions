@@ -594,7 +594,8 @@ a.card:hover .card__more { color: var(--brass); }
     scroll-snap-type: none;
     gap: 0.5rem;
   }
-  .rail__item { flex: 1 1 calc(50% - 0.25rem); justify-content: space-between; padding-inline: 0.85rem; }
+  .rail--static .rail__item { flex: 0 0 auto; padding-inline: 0.85rem; }
+  .ticker-track .rail__item { flex: 0 0 auto; }
 }
 
 /* ---- Booking wizard ---- */
