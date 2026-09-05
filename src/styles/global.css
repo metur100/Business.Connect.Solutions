@@ -309,6 +309,34 @@ a.card:hover { background: var(--white); }
 a.card:hover .card__more { color: var(--brass); }
 
 /* ---- Destination rail ---- */
+.ticker-container {
+  overflow: hidden;
+  width: 100%;
+  padding-block: 0.5rem 1.25rem;
+  mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+}
+.ticker-track {
+  display: flex;
+  gap: 0.6rem;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.rail--static {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding-block: 0.5rem 1.25rem;
+}
+
 .rail-carousel { display: flex; align-items: center; gap: 0.6rem; }
 .rail { display: flex; gap: 0.6rem; overflow-x: auto; padding-block: 0.5rem 1.25rem; scrollbar-width: thin; scroll-snap-type: x proximity; flex: 1; min-width: 0; }
 .rail__item {

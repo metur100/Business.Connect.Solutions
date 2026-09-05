@@ -7,16 +7,9 @@ import { useLanguage } from '../i18n/LanguageContext'
 import { fleetImages } from '../data/fleetImages'
 
 export default function Home() {
-  const railRef = useRef<HTMLDivElement>(null)
   const heroMediaRef = useRef<HTMLDivElement>(null)
   const { t, content } = useLanguage()
   const { dossier, services, fleet, onDemand, regions, worldwide, events } = content
-
-  function scrollRail(dir: number) {
-    const el = railRef.current
-    if (!el) return
-    el.scrollBy({ left: dir * Math.min(el.clientWidth * 0.8, 480), behavior: 'smooth' })
-  }
 
   useEffect(() => {
     const media = heroMediaRef.current
@@ -145,20 +138,22 @@ export default function Home() {
           <p className="muted" style={{ maxWidth: '60ch', marginTop: '1rem' }}>
             {t('home.reachText')}
           </p>
-          <div className="rail-carousel">
-            <button className="rail-nav" aria-label="←" onClick={() => scrollRail(-1)}>‹</button>
-            <div className="rail" role="list" ref={railRef}>
-              {regions.map((r) => (
-                <Link className="rail__item" role="listitem" to={`/anfrage?ziel=${encodeURIComponent(r)}`} key={r}>{r} →</Link>
+          <div className="ticker-container" role="region" aria-label={t('home.reachH2a')}>
+            <div className="ticker-track">
+              {[...regions, ...regions, ...regions, ...regions].map((r, i) => (
+                <Link className="rail__item" to={`/anfrage?ziel=${encodeURIComponent(r)}`} key={`${r}-${i}`}>
+                  {r} →
+                </Link>
               ))}
             </div>
-            <button className="rail-nav" aria-label="→" onClick={() => scrollRail(1)}>›</button>
           </div>
 
           <h2 className="h" style={{ marginTop: 'clamp(2rem,5vw,3.5rem)' }}>{t('home.reachH2b')}</h2>
-          <div className="rail rail--outline" role="list">
+          <div className="rail--static rail--outline" role="list">
             {worldwide.map((r) => (
-              <Link className="rail__item" role="listitem" to={`/anfrage?ziel=${encodeURIComponent(r)}`} key={r}>{r} →</Link>
+              <Link className="rail__item" role="listitem" to={`/anfrage?ziel=${encodeURIComponent(r)}`} key={r}>
+                {r} →
+              </Link>
             ))}
           </div>
         </div>
