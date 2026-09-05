@@ -169,7 +169,7 @@ export const events: EventItem[] = [
     date: '19.09. — 04.10.2026',
     city: 'München',
     text: 'Zelt-Transfers, Firmenabende und Gästebetreuung – mit Fahrern, die die Sperrungen rund um die Theresienwiese kennen.',
-    image: 'images/oktoberfest.jpeg',
+    image: 'images/oktoberfest.png',
     body: [
       'Zwei Wochen lang verwandelt sich die Theresienwiese in die grösste Volksfestbühne der Welt – mit ihr auch der Verkehr rings um die Wiesn: großräumige Sperrungen, überlastete Taxistände und ausgebuchte Hotels.',
       'Für ein einzelnes Zeltabendessen genügt oft ein Fahrzeug. Holt eine Firma dagegen mehrere Gäste zeitgleich von unterschiedlichen Hotels ab, wird daraus schnell eine kleine Flotte – genau dafür disponieren wir im Vorfeld Fahrzeugmix, Reihenfolge und Übergabepunkte.',
@@ -182,7 +182,7 @@ export const events: EventItem[] = [
     date: '5.–7. Oktober 2026',
     city: 'München',
     text: 'Internationale Fachmesse für Immobilien und Investitionen – Aussteller- und Delegationslogistik zwischen Messe, Hotels und Flughafen.',
-    image: 'images/expo.jpeg',
+    image: 'images/expo.png',
     body: [
       'Die Expo Real bringt jeden Oktober die internationale Immobilien- und Investmentbranche auf das Gelände der Messe München – mit dichtem Terminplan zwischen Empfängen, Standterminen und Networking-Abenden in der ganzen Stadt.',
       'Aussteller und Delegationen bewegen sich meist im Halbstundentakt zwischen Hotel, Messehalle und Abendveranstaltung. Wir planen diese Taktung im Voraus und stellen sicher, dass der Fahrer vor Ort ist, bevor der Termin endet.',

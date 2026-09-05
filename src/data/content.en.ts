@@ -169,7 +169,7 @@ export const events: EventItem[] = [
     date: '19 Sep — 4 Oct 2026',
     city: 'Munich',
     text: 'Tent transfers, corporate evenings and guest care – with drivers who know the road closures around the Theresienwiese.',
-    image: 'images/oktoberfest.jpeg',
+    image: 'images/oktoberfest.png',
     body: [
       "For two weeks, the Theresienwiese turns into the world's biggest folk festival stage – and with it, traffic around the Wiesn changes too: wide-ranging road closures, overwhelmed taxi ranks and fully booked hotels.",
       'A single tent dinner often only needs one vehicle. But if a company is picking up several guests from different hotels at the same time, that quickly becomes a small fleet — which is exactly what we plan in advance: vehicle mix, sequence and handover points.',
