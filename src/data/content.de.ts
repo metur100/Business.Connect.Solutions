@@ -164,19 +164,6 @@ export type EventItem = {
 
 export const events: EventItem[] = [
   {
-    slug: 'nfl-munich-game',
-    title: 'NFL Munich Game 2026',
-    date: 'So. 15.11.2026 · 15:30 Uhr',
-    city: 'München',
-    text: 'Patriots vs. Lions in der Allianz Arena – Stadion-Transfers und Hospitality-Shuttles für Gäste und Sponsoren.',
-    image: 'images/nfl.jpeg',
-    body: [
-      'Zum dritten NFL-Spiel in München füllt sich die Allianz Arena am 15. November 2026 mit internationalen Gästen – Anpfiff ist um 15:30 Uhr, wenn die New England Patriots auf die Detroit Lions treffen.',
-      'Rund um Spieltage dieser Grössenordnung sind Parkplätze rar, Strassen gesperrt und Taxistände überlastet. Wir übernehmen den Transfer von Hotel oder Flughafen direkt zum Stadion, holen Sie nach dem Schlusspfiff wieder ab und stimmen Ankunftszeiten mit Hospitality-Programmen und VIP-Bereichen ab.',
-      'Für Firmengruppen und Sponsoren-Delegationen disponieren wir mehrere Fahrzeuge gleichzeitig, inklusive fester Einsatzleitung vor Ort.',
-    ],
-  },
-  {
     slug: 'oktoberfest-muenchen',
     title: 'Oktoberfest München 2026',
     date: '19.09. — 04.10.2026',
@@ -213,6 +200,19 @@ export const events: EventItem[] = [
       'Die Electronica zählt zu den grössten Fachmessen der Elektronikbranche weltweit und zieht Aussteller und Delegationen aus allen Kontinenten nach München.',
       'Vier Messetage bedeuten dichten Programmablauf zwischen Flughafenankunft, Hotel, Messestand und Abendveranstaltungen – oft für Gruppen, die zeitversetzt anreisen. Wir koordinieren Abholzeiten je nach Ankunft und stellen bei Bedarf mehrere Fahrzeuge gleichzeitig.',
       'Auf Wunsch übernehmen wir auch die Standbetreuung ankommender Gäste, von der Begrüssung am Flughafen bis zur Übergabe am Messestand.',
+    ],
+  },
+  {
+    slug: 'nfl-munich-game',
+    title: 'NFL Munich Game 2026',
+    date: 'So. 15.11.2026 · 15:30 Uhr',
+    city: 'München',
+    text: 'Patriots vs. Lions in der Allianz Arena – Stadion-Transfers und Hospitality-Shuttles für Gäste und Sponsoren.',
+    image: 'images/nfl.jpeg',
+    body: [
+      'Zum dritten NFL-Spiel in München füllt sich die Allianz Arena am 15. November 2026 mit internationalen Gästen – Anpfiff ist um 15:30 Uhr, wenn die New England Patriots auf die Detroit Lions treffen.',
+      'Rund um Spieltage dieser Grössenordnung sind Parkplätze rar, Strassen gesperrt und Taxistände überlastet. Wir übernehmen den Transfer von Hotel oder Flughafen direkt zum Stadion, holen Sie nach dem Schlusspfiff wieder ab und stimmen Ankunftszeiten mit Hospitality-Programmen und VIP-Bereichen ab.',
+      'Für Firmengruppen und Sponsoren-Delegationen disponieren wir mehrere Fahrzeuge gleichzeitig, inklusive fester Einsatzleitung vor Ort.',
     ],
   },
 ]

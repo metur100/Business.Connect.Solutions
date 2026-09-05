@@ -164,19 +164,6 @@ export type EventItem = {
 
 export const events: EventItem[] = [
   {
-    slug: 'nfl-munich-game',
-    title: 'NFL Munich Game 2026',
-    date: 'Sun, 15 Nov 2026 · 3:30 pm',
-    city: 'Munich',
-    text: 'Patriots vs. Lions at the Allianz Arena – stadium transfers and hospitality shuttles for guests and sponsors.',
-    image: 'images/nfl.jpeg',
-    body: [
-      'For the third NFL game in Munich, the Allianz Arena will fill with international guests on 15 November 2026 – kick-off is at 3:30 pm, when the New England Patriots take on the Detroit Lions.',
-      'Around a matchday of this size, parking is scarce, roads are closed and taxi ranks are overwhelmed. We handle the transfer from your hotel or the airport straight to the stadium, pick you up again after the final whistle, and coordinate arrival times with hospitality programmes and VIP areas.',
-      'For corporate groups and sponsor delegations we dispatch several vehicles at once, including a dedicated on-site operations lead.',
-    ],
-  },
-  {
     slug: 'oktoberfest-muenchen',
     title: 'Oktoberfest Munich 2026',
     date: '19 Sep — 4 Oct 2026',
@@ -213,6 +200,19 @@ export const events: EventItem[] = [
       'electronica is one of the largest trade fairs in the electronics industry worldwide, drawing exhibitors and delegations from every continent to Munich.',
       'Four fair days mean a dense schedule between airport arrival, hotel, exhibition stand and evening events – often for groups arriving at staggered times. We coordinate pick-up times around each arrival and provide several vehicles at once when needed.',
       'On request, we also take care of arriving guests from start to finish — from the welcome at the airport through to hand-off at the exhibition stand.',
+    ],
+  },
+  {
+    slug: 'nfl-munich-game',
+    title: 'NFL Munich Game 2026',
+    date: 'Sun, 15 Nov 2026 · 3:30 pm',
+    city: 'Munich',
+    text: 'Patriots vs. Lions at the Allianz Arena – stadium transfers and hospitality shuttles for guests and sponsors.',
+    image: 'images/nfl.jpeg',
+    body: [
+      'For the third NFL game in Munich, the Allianz Arena will fill with international guests on 15 November 2026 – kick-off is at 3:30 pm, when the New England Patriots take on the Detroit Lions.',
+      'Around a matchday of this size, parking is scarce, roads are closed and taxi ranks are overwhelmed. We handle the transfer from your hotel or the airport straight to the stadium, pick you up again after the final whistle, and coordinate arrival times with hospitality programmes and VIP areas.',
+      'For corporate groups and sponsor delegations we dispatch several vehicles at once, including a dedicated on-site operations lead.',
     ],
   },
 ]
