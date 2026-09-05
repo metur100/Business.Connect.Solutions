@@ -50,19 +50,17 @@ export default function Home() {
         <div className="hero__scrim" />
         <div className="hero__in">
           <p className="eyebrow" style={{ maxWidth: 460 }}>{t('home.heroEyebrow')}</p>
-          <h1>
-            {t('home.heroH1a')}<br />{t('home.heroH1b')} <em>{t('nav.flotte')}</em>.
-          </h1>
-          <p className="hero__lede">
-            {t('home.heroLede2')}
-          </p>
+          <h1>{t('home.heroH1Prefix')}<br className="hero__h1-break" /><em>{t('home.heroH1Highlight')}</em>{t('home.heroH1Suffix')}</h1>
+          <p className="hero__sub">{t('home.heroSub')}</p>
           <nav className="hero__services" aria-label={t('home.heroServices')}>
             <ul>
-              {services.map((s) => (
-                <li key={s.slug}>
-                  <Link to={`/leistungen/${s.slug}`}>{s.title}</Link>
-                </li>
-              ))}
+              {services
+                .filter((s) => s.slug !== 'sicherheitsdienst' && s.slug !== 'concierge-und-persoenliche-assistenz')
+                .map((s) => (
+                  <li key={s.slug}>
+                    <Link to={`/leistungen/${s.slug}`}>{s.title}</Link>
+                  </li>
+                ))}
             </ul>
           </nav>
         </div>
