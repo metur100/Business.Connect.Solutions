@@ -48,7 +48,7 @@ export const services: Service[] = [
   {
     code: 'S-03',
     slug: 'sicherheitsdienst',
-    title: 'Sicherheitsdienst',
+    title: 'Sicherheitsdienst auf Anfrage',
     teaser: 'Bewaffnete und unbewaffnete professionelle Sicherheitslösungen für sensible Einsätze.',
     body: [
       'Sicherheit ohne Kompromisse: Für risikoreiche und sensible Anlässe stellen wir geschultes Personal, abgestimmt auf Lage, Route und Protokoll.',
