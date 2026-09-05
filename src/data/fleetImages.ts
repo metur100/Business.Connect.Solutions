@@ -11,12 +11,11 @@ export const fleetImages: FleetImage[] = [
     alt: 'Schwarze Mercedes-Benz E-Klasse für geschäftliche Chauffeurfahrten in München',
   },
   {
-    src: `${import.meta.env.BASE_URL}images/img12.jpeg`,
+    src: `${import.meta.env.BASE_URL}images/bco-fleet-s-class.png`,
     alt: 'Die für BCO Solutions bestellte Mercedes-Benz S-Klasse',
   },
   {
-    src: `${import.meta.env.BASE_URL}images/img4.jpeg`,
+    src: `${import.meta.env.BASE_URL}images/bco-fleet-v-class.png`,
     alt: 'Die eigene Mercedes-Benz V-Klasse von BCO Solutions',
-    style: { objectFit: 'cover', objectPosition: 'center 54%', padding: 0 },
   },
 ]
