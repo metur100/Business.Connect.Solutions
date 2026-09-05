@@ -233,7 +233,7 @@ export const faqs = [
   { q: 'Which cities do you operate in?', a: "We're based in Munich. We drive throughout Germany and Europe — regularly to Monaco, St. Tropez, Courchevel, Davos, Milan, Vienna and Zurich. Assignments in Asia and Switzerland are also part of our experience." },
   { q: 'Do I always get the same driver?', a: "Yes — that's the core of the offering. Instead of an anonymous vehicle fleet, you get one personal, dedicated driver: short lines of communication, clear arrangements, trust." },
   { q: 'Is the service available around the clock?', a: 'Yes. We take enquiries, changes and short-notice requests 24 hours a day, by phone or WhatsApp.' },
-  { q: "What's the difference between a security driver and a chauffeur?", a: 'A security driver is additionally trained in defensive and evasive driving, route assessment and handling special protection vehicles, based on training at Sachsenring and the Mercedes Guard programme.' },
+  { q: "What's the difference between a security driver and a chauffeur?", a: 'A security driver has completed multi-day specialized training in high-level vehicle dynamics. In addition to a professional chauffeur presence, they master emergency braking with evasive maneuvers, skid recovery, control during oversteer or understeer, and precise vehicle handling in extreme weather such as aquaplaning and black ice.' },
   { q: "Can I book vehicles that aren't part of the fleet?", a: 'Yes. We can provide a Mercedes-Maybach, Mercedes G-Class, Range Rover, Rolls-Royce, Bentley, Sprinter or coach on request. Please allow some lead time for this.' },
   { q: 'How do I book?', a: "Call us, message us on WhatsApp, or send the enquiry form. You'll receive a binding confirmation with driver, vehicle and time slot." },
 ]

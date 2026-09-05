@@ -463,7 +463,7 @@ a.card:hover .card__more { color: var(--brass); }
   font-family: var(--ff-mono); font-size: 1.2rem;
 }
 .faq__q[aria-expanded="true"]::after { content: '–'; }
-.faq__a { padding: 0 0 1.5rem; max-width: 70ch; color: var(--slate); }
+.faq__a { padding: 0 0 1.5rem; max-width: 70ch; color: var(--slate); white-space: pre-line; }
 
 /* ---- Any questions band ---- */
 .anyq {
