@@ -169,10 +169,7 @@ export default function Home() {
               <Reveal className="fleet__card" key={f.name}>
                 <div className="fleet__img">
                   {fleetImages[i] ? (
-                    <>
-                      <img src={fleetImages[i].src} alt={fleetImages[i].alt} style={fleetImages[i].style} loading="lazy" />
-                      <span className="fleet__badge">BCO Solutions</span>
-                    </>
+                    <img src={fleetImages[i].src} alt={fleetImages[i].alt} style={fleetImages[i].style} loading="lazy" />
                   ) : (
                     <div className="fleet__ph">Fahrzeugbild</div>
                   )}

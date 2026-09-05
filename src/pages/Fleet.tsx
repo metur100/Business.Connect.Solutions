@@ -29,15 +29,12 @@ export default function Fleet() {
                 <Reveal className="fleet__card" key={vehicle.name}>
                   <div className="fleet__img">
                     {image ? (
-                      <>
-                        <img
-                          src={image.src}
-                          alt={image.alt}
-                          style={image.style}
-                          loading="lazy"
-                        />
-                        <span className="fleet__badge">BCO Solutions</span>
-                      </>
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        style={image.style}
+                        loading="lazy"
+                      />
                     ) : (
                       <div className="fleet__ph">Fahrzeugbild</div>
                     )}
