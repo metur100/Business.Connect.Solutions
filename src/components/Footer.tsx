@@ -39,6 +39,7 @@ export default function Footer() {
               <li><Link to="/fahrer">{t('footer.driverPage')}</Link></li>
               <li><Link to="/flotte">{t('footer.fleetPage')}</Link></li>
               <li><Link to="/anlaesse">{t('footer.eventsPage')}</Link></li>
+              <li><Link to="/anfrage">{t('footer.bookingPage')}</Link></li>
               <li><Link to="/kontakt">{t('footer.contactPage')}</Link></li>
             </ul>
           </div>
@@ -52,9 +53,10 @@ export default function Footer() {
             </ul>
             <h4 style={{ marginTop: '1.75rem' }}>{t('footer.legal')}</h4>
             <ul>
-              <li><a href="/impressum">{t('footer.impressum')}</a></li>
-              <li><a href="/datenschutz">{t('footer.datenschutz')}</a></li>
-              <li><a href="/agb">{t('footer.agb')}</a></li>
+              <li><Link to="/impressum">{t('footer.impressum')}</Link></li>
+              <li><Link to="/datenschutz">{t('footer.datenschutz')}</Link></li>
+              <li><Link to="/agb">{t('footer.agb')}</Link></li>
+              <li><Link to="/cookie-richtlinie">{t('footer.cookies')}</Link></li>
             </ul>
           </div>
         </div>

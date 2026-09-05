@@ -3,23 +3,8 @@ import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
 import Faq from '../components/Faq'
 import AnyQuestions from '../components/AnyQuestions'
-import { company } from '../data/company'
 import { useLanguage } from '../i18n/LanguageContext'
-
-const fleetImages = [
-  {
-    src: `${import.meta.env.BASE_URL}images/bco-fleet-e-class.png`,
-    alt: 'Schwarze Mercedes-Benz E-Klasse für geschäftliche Chauffeurfahrten in München',
-  },
-  {
-    src: `${import.meta.env.BASE_URL}images/img12.jpeg`,
-    alt: 'Die für BCO Solutions bestellte Mercedes-Benz S-Klasse',
-  },
-  {
-    src: `${import.meta.env.BASE_URL}images/img3.jpeg`,
-    alt: 'Die eigene Mercedes-Benz V-Klasse von BCO Solutions',
-  },
-]
+import { fleetImages } from '../data/fleetImages'
 
 export default function Home() {
   const railRef = useRef<HTMLDivElement>(null)
@@ -69,17 +54,17 @@ export default function Home() {
             {t('home.heroH1a')}<br />{t('home.heroH1b')} <em>{t('nav.flotte')}</em>.
           </h1>
           <p className="hero__lede">
-            {t('home.heroLede1')}
-          </p>
-          <p className="hero__lede" style={{ marginTop: '0.75rem', fontSize: 'var(--step-0)', color: 'rgba(242,241,237,0.7)' }}>
             {t('home.heroLede2')}
           </p>
-          <div className="hero__cta">
-            <Link className="btn btn--brass" to="/kontakt">{t('home.ctaBook')}</Link>
-            <a className="btn btn--ghost" href={company.whatsapp} target="_blank" rel="noopener noreferrer">
-              {t('home.ctaWhatsapp')}
-            </a>
-          </div>
+          <nav className="hero__services" aria-label={t('home.heroServices')}>
+            <ul>
+              {services.map((s) => (
+                <li key={s.slug}>
+                  <Link to={`/leistungen/${s.slug}`}>{s.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
       </section>
 
@@ -161,7 +146,7 @@ export default function Home() {
             <button className="rail-nav" aria-label="←" onClick={() => scrollRail(-1)}>‹</button>
             <div className="rail" role="list" ref={railRef}>
               {regions.map((r) => (
-                <Link className="rail__item" role="listitem" to={`/kontakt?ziel=${encodeURIComponent(r)}`} key={r}>{r} →</Link>
+                <Link className="rail__item" role="listitem" to={`/anfrage?ziel=${encodeURIComponent(r)}`} key={r}>{r} →</Link>
               ))}
             </div>
             <button className="rail-nav" aria-label="→" onClick={() => scrollRail(1)}>›</button>
@@ -170,7 +155,7 @@ export default function Home() {
           <h2 className="h" style={{ marginTop: 'clamp(2rem,5vw,3.5rem)' }}>{t('home.reachH2b')}</h2>
           <div className="rail rail--outline" role="list">
             {worldwide.map((r) => (
-              <Link className="rail__item" role="listitem" to={`/kontakt?ziel=${encodeURIComponent(r)}`} key={r}>{r} →</Link>
+              <Link className="rail__item" role="listitem" to={`/anfrage?ziel=${encodeURIComponent(r)}`} key={r}>{r} →</Link>
             ))}
           </div>
         </div>
@@ -187,7 +172,7 @@ export default function Home() {
                 <div className="fleet__img">
                   {fleetImages[i] ? (
                     <>
-                      <img src={fleetImages[i].src} alt={fleetImages[i].alt} loading="lazy" />
+                      <img src={fleetImages[i].src} alt={fleetImages[i].alt} style={fleetImages[i].style} loading="lazy" />
                       <span className="fleet__badge">BCO Solutions</span>
                     </>
                   ) : (
@@ -198,7 +183,7 @@ export default function Home() {
                   <h3 className="h3">{f.name}</h3>
                   <span className="fleet__seats">{f.seats}</span>
                   <p style={{ color: 'rgba(242,241,237,0.72)' }}>{f.text}</p>
-                  <Link className="btn btn--ghost" to="/kontakt">{t('home.fleetCta')}</Link>
+                  <Link className="btn btn--ghost" to={`/anfrage?fahrzeug=${encodeURIComponent(f.name)}`}>{t('home.fleetCta')}</Link>
                 </div>
               </Reveal>
             ))}
@@ -215,7 +200,7 @@ export default function Home() {
                 <li className="chip" key={o}>{o}</li>
               ))}
             </ul>
-            <Link className="btn btn--brass" to="/kontakt" style={{ marginTop: '1.5rem' }}>{t('home.ondemandCta')}</Link>
+            <Link className="btn btn--brass" to="/anfrage" style={{ marginTop: '1.5rem' }}>{t('home.ondemandCta')}</Link>
           </div>
         </div>
       </section>

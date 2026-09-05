@@ -47,7 +47,7 @@ export default function ServiceDetail() {
               <p className={b === service.body[0] ? 'lead' : 'muted'} key={b}>{b}</p>
             ))}
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginTop: '1.5rem' }}>
-              <Link className="btn" to="/kontakt">{t('serviceDetail.cta')}</Link>
+              <Link className="btn" to="/anfrage">{t('serviceDetail.cta')}</Link>
               <Link className="btn btn--ghost" to="/leistungen">{t('serviceDetail.allServices')}</Link>
             </div>
           </div>

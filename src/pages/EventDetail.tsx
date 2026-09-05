@@ -57,7 +57,7 @@ export default function EventDetail() {
                 <p className={i === 0 ? 'lead' : 'muted'} key={b}>{b}</p>
               ))}
               <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginTop: '1.5rem' }}>
-                <Link className="btn" to="/kontakt">{t('eventDetail.cta')}</Link>
+                <Link className="btn" to="/anfrage">{t('eventDetail.cta')}</Link>
                 <Link className="btn btn--ghost" to="/anlaesse">{t('eventDetail.allEvents')}</Link>
               </div>
             </div>

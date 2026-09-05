@@ -1,41 +1,10 @@
-import { useState, type FormEvent } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { company } from '../data/company'
 import { useLanguage } from '../i18n/LanguageContext'
 import Faq from '../components/Faq'
 
 export default function Contact() {
-  const [sent, setSent] = useState(false)
-  const [searchParams] = useSearchParams()
-  const ziel = searchParams.get('ziel') ?? ''
-  const { t, content } = useLanguage()
-  const { services } = content
-
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-
-    const formData = new FormData(event.currentTarget)
-
-    const body = [
-      `${t('contact.mailName')}: ${formData.get('name')}`,
-      `${t('contact.mailEmail')}: ${formData.get('email')}`,
-      `${t('contact.mailPhone')}: ${formData.get('phone')}`,
-      `${t('contact.mailService')}: ${formData.get('service')}`,
-      `${t('contact.mailDate')}: ${formData.get('date')}`,
-      `${t('contact.mailFrom')}: ${formData.get('from')}`,
-      `${t('contact.mailTo')}: ${formData.get('to')}`,
-      '',
-      `${t('contact.mailMessage')}: ${formData.get('message')}`,
-    ].join('\n')
-
-    const mailtoUrl =
-      `mailto:${company.email}` +
-      `?subject=${encodeURIComponent(t('contact.mailSubject'))}` +
-      `&body=${encodeURIComponent(body)}`
-
-    window.location.href = mailtoUrl
-    setSent(true)
-  }
+  const { t } = useLanguage()
 
   return (
     <>
@@ -154,194 +123,77 @@ export default function Contact() {
             <div>
               <p className="eyebrow">{t('contact.formEyebrow')}</p>
 
-              {sent && (
-                <p
-                  className="lead"
-                  style={{ color: 'var(--brass)' }}
+              <p className="lead">{t('contact.formTeaser')}</p>
+
+              <Link className="btn btn--brass" to="/anfrage" style={{ marginTop: '1rem' }}>
+                {t('contact.formCta')}
+              </Link>
+
+              <div style={{ marginTop: 'clamp(2rem, 5vw, 3rem)' }}>
+                <p className="eyebrow">{t('contact.locationEyebrow')}</p>
+
+                <div
+                  style={{
+                    background: 'var(--white)',
+                    border: '1px solid var(--paper-2)',
+                  }}
                 >
-                  {t('contact.sentMessage')}
-                </p>
-              )}
-
-              <form
-                className="form"
-                onSubmit={handleSubmit}
-              >
-                <div className="field">
-                  <label htmlFor="name">{t('contact.labelName')}</label>
-                  <input
-                    id="name"
-                    name="name"
-                    required
-                    autoComplete="name"
-                  />
-                </div>
-
-                <div className="field">
-                  <label htmlFor="email">{t('contact.labelEmail')}</label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    autoComplete="email"
-                  />
-                </div>
-
-                <div className="field">
-                  <label htmlFor="phone">{t('contact.labelPhone')}</label>
-                  <input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    autoComplete="tel"
-                  />
-                </div>
-
-                <div className="field">
-                  <label htmlFor="service">{t('contact.labelService')}</label>
-
-                  <select
-                    id="service"
-                    name="service"
-                    defaultValue={services[0].title}
-                  >
-                    {services.map((service) => (
-                      <option
-                        key={service.slug}
-                        value={service.title}
-                      >
-                        {service.title}
-                      </option>
-                    ))}
-
-                    <option value={t('contact.otherOption')}>
-                      {t('contact.otherOption')}
-                    </option>
-                  </select>
-                </div>
-
-                <div className="field">
-                  <label htmlFor="date">
-                    {t('contact.labelDate')}
-                  </label>
-
-                  <input
-                    id="date"
-                    name="date"
-                    type="datetime-local"
-                  />
-                </div>
-
-                <div className="field">
-                  <label htmlFor="from">{t('contact.labelFrom')}</label>
-
-                  <input
-                    id="from"
-                    name="from"
-                    placeholder={t('contact.fromPlaceholder')}
-                  />
-                </div>
-
-                <div className="field">
-                  <label htmlFor="to">{t('contact.labelTo')}</label>
-
-                  <input
-                    id="to"
-                    name="to"
-                    placeholder={t('contact.toPlaceholder')}
-                    defaultValue={ziel}
-                  />
-                </div>
-
-                <div className="field">
-                  <label htmlFor="message">{t('contact.labelMessage')}</label>
-
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    placeholder={t('contact.messagePlaceholder')}
-                  />
-                </div>
-
-                <button
-                  className="btn btn--brass"
-                  type="submit"
-                >
-                  {t('contact.submitCta')}
-                </button>
-
-                <p className="form__note">
-                  {t('contact.formNote')}
-                </p>
-              </form>
-            </div>
-          </div>
-
-          <div style={{ marginTop: 'clamp(3rem, 6vw, 5rem)' }}>
-            <p className="eyebrow">{t('contact.locationEyebrow')}</p>
-
-            <div
-              style={{
-                background: 'var(--white)',
-                border: '1px solid var(--paper-2)',
-              }}
-            >
-              <iframe
-                title="Standort von BCO Solutions in Neubiberg bei München"
-                src="https://www.google.com/maps?q=Professor-Messerschmitt-Stra%C3%9Fe%203a%2C%2085579%20Neubiberg%20bei%20M%C3%BCnchen&output=embed"
-                style={{
-                  display: 'block',
-                  width: '100%',
-                  minHeight: '360px',
-                  border: 0,
-                }}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-
-              <div
-                style={{
-                  padding: '1.25rem',
-                  display: 'flex',
-                  alignItems: 'flex-end',
-                  justifyContent: 'space-between',
-                  gap: '1rem',
-                  flexWrap: 'wrap',
-                }}
-              >
-                <div>
-                  <p
-                    className="dossier__k"
-                    style={{ margin: 0 }}
-                  >
-                    {t('contact.officeLabel')}
-                  </p>
-
-                  <p
+                  <iframe
+                    title="Standort von BCO Solutions in Neubiberg bei München"
+                    src="https://www.google.com/maps?q=Professor-Messerschmitt-Stra%C3%9Fe%203a%2C%2085579%20Neubiberg%20bei%20M%C3%BCnchen&output=embed"
                     style={{
-                      margin: '0.5rem 0 0',
-                      lineHeight: 1.45,
+                      display: 'block',
+                      width: '100%',
+                      minHeight: '320px',
+                      border: 0,
+                    }}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+
+                  <div
+                    style={{
+                      padding: '1.25rem',
+                      display: 'flex',
+                      alignItems: 'flex-end',
+                      justifyContent: 'space-between',
+                      gap: '1rem',
+                      flexWrap: 'wrap',
                     }}
                   >
-                    {company.street}
-                    <br />
-                    {company.city}
-                    <br />
-                    {company.country}
-                  </p>
-                </div>
+                    <div>
+                      <p
+                        className="dossier__k"
+                        style={{ margin: 0 }}
+                      >
+                        {t('contact.officeLabel')}
+                      </p>
 
-                <a
-                  className="btn btn--ghost"
-                  href="https://www.google.com/maps/search/?api=1&query=Professor-Messerschmitt-Stra%C3%9Fe%203a%2C%2085579%20Neubiberg%20bei%20M%C3%BCnchen"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ marginLeft: 'auto' }}
-                >
-                  {t('contact.routeCta')}
-                </a>
+                      <p
+                        style={{
+                          margin: '0.5rem 0 0',
+                          lineHeight: 1.45,
+                        }}
+                      >
+                        {company.street}
+                        <br />
+                        {company.city}
+                        <br />
+                        {company.country}
+                      </p>
+                    </div>
+
+                    <a
+                      className="btn btn--ghost"
+                      href="https://www.google.com/maps/search/?api=1&query=Professor-Messerschmitt-Stra%C3%9Fe%203a%2C%2085579%20Neubiberg%20bei%20M%C3%BCnchen"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ marginLeft: 'auto' }}
+                    >
+                      {t('contact.routeCta')}
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

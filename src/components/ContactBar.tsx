@@ -25,7 +25,7 @@ export default function ContactBar() {
         </svg>
         <span className="cbar__label">{t('contactBar.email')}</span>
       </a>
-      <Link className="cbar__book" to="/kontakt">
+      <Link className="cbar__book" to="/anfrage">
         {t('contactBar.book')}
       </Link>
     </div>

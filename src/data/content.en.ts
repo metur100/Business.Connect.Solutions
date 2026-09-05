@@ -149,7 +149,7 @@ export const events: EventItem[] = [
     date: 'Sun, 15 Nov 2026 · 3:30 pm',
     city: 'Munich',
     text: 'Patriots vs. Lions at the Allianz Arena – stadium transfers and hospitality shuttles for guests and sponsors.',
-    image: 'termin1.png',
+    image: 'images/nfl.jpeg',
     body: [
       'For the third NFL game in Munich, the Allianz Arena will fill with international guests on 15 November 2026 – kick-off is at 3:30 pm, when the New England Patriots take on the Detroit Lions.',
       'Around a matchday of this size, parking is scarce, roads are closed and taxi ranks are overwhelmed. We handle the transfer from your hotel or the airport straight to the stadium, pick you up again after the final whistle, and coordinate arrival times with hospitality programmes and VIP areas.',
@@ -162,7 +162,7 @@ export const events: EventItem[] = [
     date: '19 Sep — 4 Oct 2026',
     city: 'Munich',
     text: 'Tent transfers, corporate evenings and guest care – with drivers who know the road closures around the Theresienwiese.',
-    image: 'termin2.png',
+    image: 'images/oktoberfest.jpeg',
     body: [
       "For two weeks, the Theresienwiese turns into the world's biggest folk festival stage – and with it, traffic around the Wiesn changes too: wide-ranging road closures, overwhelmed taxi ranks and fully booked hotels.",
       'A single tent dinner often only needs one vehicle. But if a company is picking up several guests from different hotels at the same time, that quickly becomes a small fleet — which is exactly what we plan in advance: vehicle mix, sequence and handover points.',
@@ -175,7 +175,7 @@ export const events: EventItem[] = [
     date: '5–7 Oct 2026',
     city: 'Munich',
     text: 'The international trade fair for property and investment – exhibitor and delegation logistics between the fairground, hotels and airport.',
-    image: 'termin3.png',
+    image: 'images/expo.jpeg',
     body: [
       'Every October, Expo Real brings the international property and investment industry to the Messe München fairground – with a packed schedule of receptions, stand appointments and networking evenings across the city.',
       'Exhibitors and delegations often move between hotel, exhibition hall and evening event on a tight half-hour schedule. We plan this timing in advance and make sure the driver is on site before each appointment ends.',
@@ -188,7 +188,7 @@ export const events: EventItem[] = [
     date: '10–13 Nov 2026',
     city: 'Munich',
     text: 'The world\'s leading electronics trade fair – group shuttles and stand support for international delegations.',
-    image: 'termin4.png',
+    image: 'images/electronica.jpeg',
     body: [
       'electronica is one of the largest trade fairs in the electronics industry worldwide, drawing exhibitors and delegations from every continent to Munich.',
       'Four fair days mean a dense schedule between airport arrival, hotel, exhibition stand and evening events – often for groups arriving at staggered times. We coordinate pick-up times around each arrival and provide several vehicles at once when needed.',

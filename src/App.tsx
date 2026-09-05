@@ -11,6 +11,8 @@ import Fleet from './pages/Fleet'
 import Events from './pages/Events'
 import EventDetail from './pages/EventDetail'
 import Contact from './pages/Contact'
+import Booking from './pages/Booking'
+import Legal from './pages/Legal'
 import NotFound from './pages/NotFound'
 import { useLanguage } from './i18n/LanguageContext'
 
@@ -37,6 +39,11 @@ export default function App() {
           <Route path="/anlaesse" element={<Events />} />
           <Route path="/anlaesse/:slug" element={<EventDetail />} />
           <Route path="/kontakt" element={<Contact />} />
+          <Route path="/anfrage" element={<Booking />} />
+          <Route path="/impressum" element={<Legal docKey="impressum" />} />
+          <Route path="/datenschutz" element={<Legal docKey="datenschutz" />} />
+          <Route path="/agb" element={<Legal docKey="agb" />} />
+          <Route path="/cookie-richtlinie" element={<Legal docKey="cookies" />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

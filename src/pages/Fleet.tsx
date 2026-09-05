@@ -1,22 +1,8 @@
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../i18n/LanguageContext'
+import { fleetImages } from '../data/fleetImages'
 import AnyQuestions from '../components/AnyQuestions'
 import Reveal from '../components/Reveal'
-
-const fleetImages = [
-  {
-    src: `${import.meta.env.BASE_URL}images/bco-fleet-e-class.png`,
-    alt: 'Schwarze Mercedes-Benz E-Klasse für geschäftliche Chauffeurfahrten in München',
-  },
-  {
-    src: `${import.meta.env.BASE_URL}images/img12.jpeg`,
-    alt: 'Die für BCO Solutions bestellte Mercedes-Benz S-Klasse',
-  },
-  {
-    src: `${import.meta.env.BASE_URL}images/img3.jpeg`,
-    alt: 'Die eigene Mercedes-Benz V-Klasse von BCO Solutions',
-  },
-]
 
 export default function Fleet() {
   const { t, content } = useLanguage()
@@ -47,6 +33,7 @@ export default function Fleet() {
                         <img
                           src={image.src}
                           alt={image.alt}
+                          style={image.style}
                           loading="lazy"
                         />
                         <span className="fleet__badge">BCO Solutions</span>
@@ -65,7 +52,7 @@ export default function Fleet() {
 
                     <p>{vehicle.text}</p>
 
-                    <Link className="btn" to="/kontakt">
+                    <Link className="btn" to={`/anfrage?fahrzeug=${encodeURIComponent(vehicle.name)}`}>
                       {t('fleet.cta')}
                     </Link>
                   </div>
@@ -113,7 +100,7 @@ export default function Fleet() {
 
             <Link
               className="btn btn--brass"
-              to="/kontakt"
+              to="/anfrage"
               style={{ marginTop: '1.5rem' }}
             >
               {t('fleet.cta')}

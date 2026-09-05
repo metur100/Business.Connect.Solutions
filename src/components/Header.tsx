@@ -12,6 +12,7 @@ export default function Header() {
     { to: '/fahrer', label: t('nav.fahrer') },
     { to: '/flotte', label: t('nav.flotte') },
     { to: '/anlaesse', label: t('nav.anlaesse') },
+    { to: '/anfrage', label: t('nav.anfrage') },
     { to: '/kontakt', label: t('nav.kontakt') },
   ]
 

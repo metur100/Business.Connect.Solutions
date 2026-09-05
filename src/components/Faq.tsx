@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useLanguage } from '../i18n/LanguageContext'
 
 export default function Faq() {
-  const [open, setOpen] = useState<number | null>(0)
+  const [open, setOpen] = useState<number | null>(null)
   const { t, content } = useLanguage()
   const { faqs } = content
 
