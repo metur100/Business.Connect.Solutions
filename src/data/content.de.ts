@@ -150,7 +150,7 @@ export const fleet = [
 export const onDemand = ['Mercedes-Maybach', 'Mercedes G-Klasse', 'Range Rover', 'Rolls-Royce', 'Bentley', 'Mercedes Sprinter', 'Reisebusse', 'Sonderschutzfahrzeuge']
 
 export const regions = ['München', 'Nürnberg', 'Stuttgart', 'Frankfurt', 'Berlin', 'Hamburg', 'Düsseldorf', 'Salzburg']
-export const worldwide = ['Monaco', 'St. Tropez', 'Courchevel', 'Davos', 'London', 'Mailand', 'Wien', 'Zürich']
+export const worldwide = ['Monaco', 'St. Tropez', 'Courchevel', 'New York', 'London', 'Mailand', 'Wien', 'Zürich']
 
 export type EventItem = {
   slug: string
