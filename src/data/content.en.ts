@@ -131,7 +131,7 @@ export const services: Service[] = [
 ]
 
 export const solutions = [
-  { title: 'Solutions for Business Travel', text: 'Recurring corporate journeys with fixed terms and a single point of contact.' },
+  { title: 'Business Travel', text: 'Recurring corporate journeys with fixed terms and a single point of contact.' },
   { title: 'Global Event & Organisation Solutions', text: 'Mobility concepts for congresses, festivals and international organisations.' },
   { title: 'Roadshow Management', text: 'Multi-day support across cities and borders, scheduled without gaps.' },
   { title: 'Business Travel & Executive Travel', text: 'Journeys for board members and executives, with discretion as standard.' },

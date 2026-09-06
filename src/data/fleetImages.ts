@@ -7,7 +7,7 @@ export type FleetImage = { src: string; alt: string; style?: CSSProperties }
 
 export const fleetImages: FleetImage[] = [
   {
-    src: `${import.meta.env.BASE_URL}images/bco-fleet-e-class.png`,
+    src: `${import.meta.env.BASE_URL}images/e-klasse-flotte-warm.png`,
     alt: 'Schwarze Mercedes-Benz E-Klasse für geschäftliche Chauffeurfahrten in München',
   },
   {

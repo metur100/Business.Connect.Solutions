@@ -131,7 +131,7 @@ export const services: Service[] = [
 ]
 
 export const solutions = [
-  { title: 'Lösungen für Geschäftsreisen', text: 'Wiederkehrende Firmenfahrten mit festen Konditionen und einem Ansprechpartner.' },
+  { title: 'Geschäftsreisen', text: 'Wiederkehrende Firmenfahrten mit festen Konditionen und einem Ansprechpartner.' },
   { title: 'Globale Event- & Organisationslösungen', text: 'Mobilitätskonzepte für Kongresse, Festivals und internationale Organisationen.' },
   { title: 'Roadshow-Management', text: 'Mehrtägige Begleitungen über Städte und Ländergrenzen hinweg, lückenlos getaktet.' },
   { title: 'Geschäftsreisen & Executive Travel', text: 'Vorstands- und Führungskräftefahrten mit Diskretion als Standard.' },
