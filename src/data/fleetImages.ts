@@ -15,7 +15,7 @@ export const fleetImages: FleetImage[] = [
     alt: 'Die für BCO Solutions bestellte Mercedes-Benz S-Klasse',
   },
   {
-    src: `${import.meta.env.BASE_URL}images/bco-fleet-v-class.png`,
+    src: `${import.meta.env.BASE_URL}images/v-klasse-flotte-warm.png`,
     alt: 'Die eigene Mercedes-Benz V-Klasse von BCO Solutions',
   },
 ]
