@@ -37,7 +37,7 @@ export default function Home() {
         <div className="hero__media" ref={heroMediaRef}>
           {/* Replace hero.mp4 with the client's own footage */}
           <video autoPlay muted loop playsInline poster={`${import.meta.env.BASE_URL}images/bco-driver-service.png`}>
-            <source src={`${import.meta.env.BASE_URL}hero.mp4`} type="video/mp4" />
+            <source src={`${import.meta.env.BASE_URL}home.mp4`} type="video/mp4" />
           </video>
         </div>
         <div className="hero__scrim" />
