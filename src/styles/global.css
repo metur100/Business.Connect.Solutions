@@ -290,6 +290,68 @@ a.chip:hover {
 .dossier__v { font-family: var(--ff-display); font-size: var(--step-2); font-weight: 300; line-height: 1; }
 .dossier__n { font-size: var(--step--1); color: rgba(242,241,237,0.7); }
 
+/* ---- Home page variant: a "reels"-style scroll carousel ----
+   One entry fills the frame at a time. Scrolling inside the frame
+   snaps to the next/previous entry, replacing it in place; once
+   the last entry is reached, scrolling continues to the next page
+   section as normal (native scroll-chaining, no JS scroll-jacking). */
+.dossier__wrap { position: relative; padding-right: clamp(2rem, 6vw, 3.5rem); }
+.dossier__reel {
+  height: min(56vh, 460px);
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+}
+.dossier__reel::-webkit-scrollbar { display: none; }
+.dossier__slide {
+  height: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.dossier__slide .dossier__v { font-size: var(--step-3); }
+.dossier__caption {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: clamp(1.25rem, 3vw, 2rem);
+  max-width: 46ch;
+}
+.dossier__caption .dossier__n { font-size: var(--step-0); color: rgba(242,241,237,0.72); }
+.dossier__bar { flex: none; width: 1px; height: 1.3em; margin-top: 0.15em; background: var(--brass); }
+.dossier__ticks {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.dossier__tick {
+  width: 18px;
+  height: 2px;
+  padding: 0;
+  border: none;
+  background: rgba(185,148,90,0.3);
+  cursor: pointer;
+  transition: background 0.25s, width 0.25s;
+}
+.dossier__tick:hover { background: rgba(185,148,90,0.55); }
+.dossier__tick.is-active { background: var(--brass); width: 30px; }
+.dossier__count {
+  position: absolute;
+  right: 0;
+  bottom: -1.9rem;
+  font-family: var(--ff-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.1em;
+  color: var(--brass);
+}
+
 /* ---- Generic layout helpers ---- */
 .split { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
 @media (max-width: 900px) { .split { grid-template-columns: 1fr; } }

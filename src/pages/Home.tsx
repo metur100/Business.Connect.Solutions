@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
+import DossierReel from '../components/DossierReel'
 import Faq from '../components/Faq'
 import AnyQuestions from '../components/AnyQuestions'
 import { useLanguage } from '../i18n/LanguageContext'
@@ -37,7 +38,7 @@ export default function Home() {
         <div className="hero__media" ref={heroMediaRef}>
           {/* Replace hero.mp4 with the client's own footage */}
           <video autoPlay muted loop playsInline poster={`${import.meta.env.BASE_URL}images/bco-driver-service.png`}>
-            <source src={`${import.meta.env.BASE_URL}BCO.mp4`} type="video/mp4" />
+            <source src={`${import.meta.env.BASE_URL}BCO2.mp4`} type="video/mp4" />
           </video>
         </div>
         <div className="hero__scrim" />
@@ -66,14 +67,8 @@ export default function Home() {
 
       {/* ---------- SIGNATURE: Einsatzprotokoll ---------- */}
       <section className="section--dark dossier">
-        <div className="dossier__grid">
-          {dossier.map((d) => (
-            <Reveal className="dossier__cell" key={d.k}>
-              <span className="dossier__k">{d.k}</span>
-              <span className="dossier__v">{d.v}</span>
-              <span className="dossier__n">{d.n}</span>
-            </Reveal>
-          ))}
+        <div className="wrap">
+          <DossierReel items={dossier} ariaLabel={t('home.dossierAria')} />
         </div>
       </section>
 
