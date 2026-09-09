@@ -2,12 +2,15 @@ import { Link } from 'react-router-dom'
 import { useLanguage } from '../i18n/LanguageContext'
 import AnyQuestions from '../components/AnyQuestions'
 import Reveal from '../components/Reveal'
+import Seo from '../components/Seo'
 
 export default function Services() {
   const { t, content } = useLanguage()
   const { services, solutions } = content
   return (
     <>
+      <Seo title={t('seo.services.title')} description={t('seo.services.description')} path="/leistungen" />
+
       <div className="phead">
         <div className="wrap">
           <p className="eyebrow">{t('services.eyebrow')}</p>

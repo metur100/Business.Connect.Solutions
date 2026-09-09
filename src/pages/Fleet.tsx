@@ -1,14 +1,19 @@
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../i18n/LanguageContext'
 import { fleetImages } from '../data/fleetImages'
+import { onDemandImages } from '../data/onDemandImages'
 import AnyQuestions from '../components/AnyQuestions'
+import OnDemandGallery from '../components/OnDemandGallery'
 import Reveal from '../components/Reveal'
+import Seo from '../components/Seo'
 
 export default function Fleet() {
   const { t, content } = useLanguage()
   const { fleet, onDemand } = content
   return (
     <>
+      <Seo title={t('seo.fleet.title')} description={t('seo.fleet.description')} path="/flotte" />
+
       <div className="phead">
         <div className="wrap">
           <p className="eyebrow">{t('fleet.eyebrow')}</p>
@@ -65,48 +70,53 @@ export default function Fleet() {
               border: '1px solid rgba(185, 148, 90, 0.4)',
             }}
           >
-            <p className="eyebrow">{t('fleet.ondemandEyebrow')}</p>
+            <div className="ondemand__grid">
+              <div className="ondemand__text">
+                <p className="eyebrow">{t('fleet.ondemandEyebrow')}</p>
 
-            <h2
-              className="h3"
-              style={{
-                fontSize: 'var(--step-2)',
-                fontWeight: 300,
-              }}
-            >
-              {t('fleet.ondemandH2')}
-            </h2>
+                <h2
+                  className="h3"
+                  style={{
+                    fontSize: 'var(--step-2)',
+                    fontWeight: 300,
+                  }}
+                >
+                  {t('fleet.ondemandH2')}
+                </h2>
 
-            <p className="muted" style={{ maxWidth: '54ch' }}>
-              {t('fleet.ondemandText')}
-            </p>
+                <p className="muted" style={{ maxWidth: '54ch' }}>
+                  {t('fleet.ondemandText')}
+                </p>
 
-            <ul
-              className="chips"
-              style={{
-                listStyle: 'none',
-                padding: 0,
-              }}
-            >
-              {onDemand.map((vehicle) => (
-                <li key={vehicle}>
-                  <Link
-                    className="chip"
-                    to={`/anfrage?fahrzeug=${encodeURIComponent(vehicle)}`}
-                  >
-                    {vehicle}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+                <ul
+                  className="chips"
+                  style={{
+                    listStyle: 'none',
+                    padding: 0,
+                  }}
+                >
+                  {onDemand.map((vehicle) => (
+                    <li key={vehicle}>
+                      <Link
+                        className="chip"
+                        to={`/anfrage?fahrzeug=${encodeURIComponent(vehicle)}`}
+                      >
+                        {vehicle}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
 
-            <Link
-              className="btn btn--brass"
-              to="/anfrage"
-              style={{ marginTop: '1.5rem' }}
-            >
-              {t('fleet.cta')}
-            </Link>
+                <Link
+                  className="btn btn--brass"
+                  to="/anfrage"
+                  style={{ marginTop: '1.5rem' }}
+                >
+                  {t('fleet.cta')}
+                </Link>
+              </div>
+              <OnDemandGallery images={onDemandImages} />
+            </div>
           </div>
         </div>
       </section>

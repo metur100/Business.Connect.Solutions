@@ -2,12 +2,15 @@ import { Link } from 'react-router-dom'
 import { company } from '../data/company'
 import { useLanguage } from '../i18n/LanguageContext'
 import Faq from '../components/Faq'
+import Seo from '../components/Seo'
 
 export default function Contact() {
   const { t } = useLanguage()
 
   return (
     <>
+      <Seo title={t('seo.contact.title')} description={t('seo.contact.description')} path="/kontakt" />
+
       <div className="phead">
         <div className="wrap">
           <p className="eyebrow">{t('contact.eyebrow')}</p>

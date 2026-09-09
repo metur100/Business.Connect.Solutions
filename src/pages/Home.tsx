@@ -1,17 +1,19 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
+import Seo from '../components/Seo'
 import DossierReel from '../components/DossierReel'
 import Faq from '../components/Faq'
 import AnyQuestions from '../components/AnyQuestions'
+import OnDemandGallery from '../components/OnDemandGallery'
 import { useLanguage } from '../i18n/LanguageContext'
 import { fleetImages } from '../data/fleetImages'
+import { onDemandImages } from '../data/onDemandImages'
 
 export default function Home() {
   const heroMediaRef = useRef<HTMLDivElement>(null)
-  const dossierSectionRef = useRef<HTMLElement>(null)
   const { t, content } = useLanguage()
-  const { dossier, services, fleet, onDemand, regions, worldwide, events } = content
+  const { dossier, services, fleet, onDemand, regions, worldwide, events, faqs } = content
 
   useEffect(() => {
     const media = heroMediaRef.current
@@ -32,41 +34,23 @@ export default function Home() {
     }
   }, [])
 
-  // The first time the dossier section starts to appear while scrolling
-  // down from the hero, finish the job and centre it in the viewport —
-  // once only, so it doesn't fight the user on any later scroll. (An
-  // IntersectionObserver can't do this reliably here: on a short-enough
-  // viewport the section already peeks in at scrollY 0, so its threshold
-  // is "crossed" once at mount and never fires again as the user scrolls
-  // further into it — a plain scroll check doesn't have that problem.)
-  useEffect(() => {
-    const section = dossierSectionRef.current
-    if (!section) return
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-
-    let done = false
-    let raf = 0
-    function onScroll() {
-      if (done) return
-      cancelAnimationFrame(raf)
-      raf = requestAnimationFrame(() => {
-        if (done || !section || window.scrollY <= 0) return
-        if (section.getBoundingClientRect().top < window.innerHeight) {
-          done = true
-          section.scrollIntoView({ behavior: 'smooth', block: 'center' })
-          window.removeEventListener('scroll', onScroll)
-        }
-      })
-    }
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => {
-      window.removeEventListener('scroll', onScroll)
-      cancelAnimationFrame(raf)
-    }
-  }, [])
-
   return (
     <>
+      <Seo
+        title={t('seo.home.title')}
+        description={t('seo.home.description')}
+        path="/"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: faqs.map((f) => ({
+            '@type': 'Question',
+            name: f.q,
+            acceptedAnswer: { '@type': 'Answer', text: f.a },
+          })),
+        }}
+      />
+
       {/* ---------- HERO ---------- */}
       <section className="hero">
         <div className="hero__media" ref={heroMediaRef}>
@@ -100,7 +84,7 @@ export default function Home() {
       </section>
 
       {/* ---------- SIGNATURE: Einsatzprotokoll ---------- */}
-      <section className="section--dark dossier dossier--reel" ref={dossierSectionRef}>
+      <section className="section--dark dossier dossier--reel">
         <div className="wrap">
           <DossierReel items={dossier} ariaLabel={t('home.dossierAria')} />
         </div>
@@ -214,21 +198,26 @@ export default function Home() {
           </div>
 
           <div className="ondemand" style={{ border: '1px solid rgba(185,148,90,0.4)' }}>
-            <p className="eyebrow">{t('home.ondemandEyebrow')}</p>
-            <h3 className="h3" style={{ fontSize: 'var(--step-2)', fontWeight: 300 }}>{t('home.ondemandH3')}</h3>
-            <p className="muted" style={{ maxWidth: '54ch' }}>
-              {t('home.ondemandText')}
-            </p>
-            <ul className="chips" style={{ listStyle: 'none', padding: 0 }}>
-              {onDemand.map((o) => (
-                <li key={o}>
-                  <Link className="chip" to={`/anfrage?fahrzeug=${encodeURIComponent(o)}`}>
-                    {o}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <Link className="btn btn--brass" to="/anfrage" style={{ marginTop: '1.5rem' }}>{t('home.ondemandCta')}</Link>
+            <div className="ondemand__grid">
+              <div className="ondemand__text">
+                <p className="eyebrow">{t('home.ondemandEyebrow')}</p>
+                <h3 className="h3" style={{ fontSize: 'var(--step-2)', fontWeight: 300 }}>{t('home.ondemandH3')}</h3>
+                <p className="muted" style={{ maxWidth: '54ch' }}>
+                  {t('home.ondemandText')}
+                </p>
+                <ul className="chips" style={{ listStyle: 'none', padding: 0 }}>
+                  {onDemand.map((o) => (
+                    <li key={o}>
+                      <Link className="chip" to={`/anfrage?fahrzeug=${encodeURIComponent(o)}`}>
+                        {o}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                <Link className="btn btn--brass" to="/anfrage" style={{ marginTop: '1.5rem' }}>{t('home.ondemandCta')}</Link>
+              </div>
+              <OnDemandGallery images={onDemandImages} />
+            </div>
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import { legalDocs, type LegalBlock } from '../data/legal'
 import { useLanguage } from '../i18n/LanguageContext'
+import Seo from '../components/Seo'
 
 function render(blocks: LegalBlock[]) {
   const out: ReactNode[] = []
@@ -34,6 +35,8 @@ export default function Legal({ docKey }: { docKey: keyof typeof legalDocs }) {
 
   return (
     <>
+      <Seo title={`${doc.title} | BCO Solutions`} description={doc.title} path={`/${doc.slug}`} />
+
       <div className="phead">
         <div className="wrap">
           <p className="eyebrow">{t('legal.eyebrow')}</p>

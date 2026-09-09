@@ -142,6 +142,42 @@ const de = {
     text: 'Der Link führt ins Leere. Zurück zur Startseite oder direkt zur Anfrage.',
     home: 'Zur Startseite', book: 'Fahrt anfragen',
   },
+  seo: {
+    home: {
+      title: 'Chauffeurservice & Sicherheitsfahrer München | BCO Solutions',
+      description: 'Persönlicher Chauffeur- und Sicherheitsfahrer in München. Seit 2006 im Einsatz für Vorstände, Delegationen und internationale Gäste – MSC, Roadshows, Flughafentransfers. 24/7 erreichbar.',
+    },
+    services: {
+      title: 'Leistungen: Chauffeur, Sicherheit, Reisemanagement | BCO Solutions',
+      description: 'Chauffeurservice, Flughafentransfer, Sicherheitsdienst, Gruppenreisen, Reisemanagement, Host & Hostessenservices und Concierge – alle Leistungen aus einer Hand in München.',
+    },
+    driver: {
+      title: 'Ihr Fahrer: Chauffeur & Sicherheitsfahrer seit 2006 | BCO Solutions',
+      description: 'Chauffeur seit 2006, ausgebildeter Sicherheitsfahrer seit 2012. Fahrsicherheitstraining Sachsenring, Mercedes Guard Programm, Einsätze für Vorstände, Delegationen und die Münchner Sicherheitskonferenz.',
+    },
+    fleet: {
+      title: 'Fuhrpark: E-Klasse, S-Klasse, V-Klasse & mehr | BCO Solutions',
+      description: 'Mercedes-Benz E-, S- und V-Klasse als feste Flotte in München. Maybach, G-Klasse, Range Rover, Rolls-Royce, Bentley, Sprinter und Reisebusse auf Anfrage.',
+    },
+    events: {
+      title: 'Anlässe in München: Oktoberfest, Messen, Events | BCO Solutions',
+      description: 'Chauffeurservice zu Oktoberfest, Expo Real, Electronica und NFL Munich Game. Feste Fahrer und geplante Routen – keine Wartezeit trotz Sperrungen und ausgebuchter Hotels.',
+    },
+    contact: {
+      title: 'Kontakt & Fahrt anfragen | BCO Solutions München',
+      description: 'Telefon, WhatsApp oder Formular: Erreichen Sie BCO Solutions direkt, 24/7 – mit verbindlicher Bestätigung von Fahrer, Fahrzeug und Zeitfenster.',
+    },
+    booking: {
+      title: 'Fahrt anfragen: Fahrzeug, Termin, Route | BCO Solutions',
+      description: 'In drei Schritten zur verbindlichen Buchung: Fahrzeug wählen, Termin und Route angeben, absenden – Bestätigung mit Fahrer und Fahrzeug.',
+    },
+    notFound: {
+      title: 'Seite nicht gefunden | BCO Solutions',
+      description: 'Diese Seite gibt es nicht. Zurück zur Startseite oder direkt zur Anfrage bei BCO Solutions.',
+    },
+    serviceSuffix: ' | BCO Solutions München',
+    eventSuffix: ' – Chauffeurservice | BCO Solutions',
+  },
 }
 
 const en: typeof de = {
@@ -287,6 +323,42 @@ const en: typeof de = {
     eyebrow: 'Error 404', h1: "This page doesn't exist",
     text: 'The link leads nowhere. Back to the homepage or straight to an enquiry.',
     home: 'Go to homepage', book: 'Request a ride',
+  },
+  seo: {
+    home: {
+      title: 'Chauffeur & Security Driver Service in Munich | BCO Solutions',
+      description: 'Personal chauffeur and security driver in Munich. On duty since 2006 for executives, delegations and international guests – MSC, roadshows, airport transfers. Available 24/7.',
+    },
+    services: {
+      title: 'Services: Chauffeur, Security, Travel Management | BCO Solutions',
+      description: 'Chauffeur service, airport transfers, security services, group travel, travel management, host & hostess services and concierge – all services from one hand in Munich.',
+    },
+    driver: {
+      title: 'Your Driver: Chauffeur & Security Driver Since 2006 | BCO Solutions',
+      description: 'Chauffeur since 2006, trained security driver since 2012. Sachsenring driving safety training, Mercedes Guard programme, assignments for executives, delegations and the Munich Security Conference.',
+    },
+    fleet: {
+      title: 'Fleet: E-Class, S-Class, V-Class & More | BCO Solutions',
+      description: 'Mercedes-Benz E-, S- and V-Class as a fixed fleet in Munich. Maybach, G-Class, Range Rover, Rolls-Royce, Bentley, Sprinter and coaches available on request.',
+    },
+    events: {
+      title: 'Occasions in Munich: Oktoberfest, Trade Fairs, Events | BCO Solutions',
+      description: 'Chauffeur service for Oktoberfest, Expo Real, Electronica and the NFL Munich Game. Dedicated drivers and planned routes – no waiting despite road closures and fully booked hotels.',
+    },
+    contact: {
+      title: 'Contact & Request a Ride | BCO Solutions Munich',
+      description: 'Phone, WhatsApp or form: reach BCO Solutions directly, 24/7 – with a binding confirmation of driver, vehicle and time slot.',
+    },
+    booking: {
+      title: 'Request a Ride: Vehicle, Date, Route | BCO Solutions',
+      description: 'Three steps to a binding booking: choose a vehicle, add date and route, send – confirmation with driver and vehicle.',
+    },
+    notFound: {
+      title: 'Page Not Found | BCO Solutions',
+      description: "This page doesn't exist. Back to the homepage or straight to an enquiry with BCO Solutions.",
+    },
+    serviceSuffix: ' | BCO Solutions Munich',
+    eventSuffix: ' – Chauffeur Service | BCO Solutions',
   },
 }
 

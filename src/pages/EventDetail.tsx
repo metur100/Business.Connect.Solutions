@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
 import { useLanguage } from '../i18n/LanguageContext'
 import AnyQuestions from '../components/AnyQuestions'
+import Seo, { SITE_URL } from '../components/Seo'
 
 export default function EventDetail() {
   const { slug } = useParams()
@@ -10,6 +11,7 @@ export default function EventDetail() {
   if (!event) {
     return (
       <section className="section">
+        <Seo title={t('seo.notFound.title')} description={t('seo.notFound.description')} path={`/anlaesse/${slug ?? ''}`} noindex />
         <div className="wrap">
           <h1 className="h">{t('eventDetail.notFoundH1')}</h1>
           <p className="muted">{t('eventDetail.notFoundText')}</p>
@@ -21,6 +23,22 @@ export default function EventDetail() {
 
   return (
     <>
+      <Seo
+        title={`${event.title}${t('seo.eventSuffix')}`}
+        description={event.text}
+        path={`/anlaesse/${event.slug}`}
+        image={`${SITE_URL}/${event.image}`}
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'BCO Solutions', item: SITE_URL },
+            { '@type': 'ListItem', position: 2, name: t('events.eyebrow'), item: `${SITE_URL}/anlaesse` },
+            { '@type': 'ListItem', position: 3, name: event.title, item: `${SITE_URL}/anlaesse/${event.slug}` },
+          ],
+        }}
+      />
+
       <div className="phead">
         <div className="wrap">
           <p className="eyebrow">{event.date} · {event.city}</p>

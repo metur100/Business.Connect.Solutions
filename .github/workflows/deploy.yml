@@ -31,8 +31,10 @@ jobs:
         run: npm ci
 
       - name: Build
+        # Served from the custom domain root (see public/CNAME), not from
+        # /<repo-name>/, so assets must resolve against "/".
         env:
-          VITE_BASE_PATH: /${{ github.event.repository.name }}/
+          VITE_BASE_PATH: /
         run: npm run build
 
       - name: Add SPA fallback for client-side routing

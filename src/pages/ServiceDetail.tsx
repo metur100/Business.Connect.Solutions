@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
 import { useLanguage } from '../i18n/LanguageContext'
 import AnyQuestions from '../components/AnyQuestions'
+import Seo, { SITE_URL } from '../components/Seo'
 
 export default function ServiceDetail() {
   const { slug } = useParams()
@@ -10,6 +11,7 @@ export default function ServiceDetail() {
   if (!service) {
     return (
       <section className="section">
+        <Seo title={t('seo.notFound.title')} description={t('seo.notFound.description')} path={`/leistungen/${slug ?? ''}`} noindex />
         <div className="wrap">
           <h1 className="h">{t('serviceDetail.notFoundH1')}</h1>
           <p className="muted">{t('serviceDetail.notFoundText')}</p>
@@ -21,6 +23,21 @@ export default function ServiceDetail() {
 
   return (
     <>
+      <Seo
+        title={`${service.title}${t('seo.serviceSuffix')}`}
+        description={service.teaser}
+        path={`/leistungen/${service.slug}`}
+        image={service.image ? `${SITE_URL}/${service.image}` : undefined}
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: service.title,
+          description: service.teaser,
+          areaServed: ['München', 'Deutschland', 'Europa'],
+          provider: { '@type': 'LimousineService', name: 'BCO Solutions – Business Connect Solutions', url: SITE_URL },
+        }}
+      />
+
       <div className="phead">
         <div className="wrap">
           <p className="eyebrow">{service.code} · {t('services.eyebrow')}</p>

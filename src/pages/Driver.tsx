@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useLanguage } from '../i18n/LanguageContext'
 import AnyQuestions from '../components/AnyQuestions'
 import Reveal from '../components/Reveal'
+import Seo from '../components/Seo'
 
 export default function Driver() {
   const { t, content } = useLanguage()
@@ -9,6 +10,8 @@ export default function Driver() {
 
   return (
     <>
+      <Seo title={t('seo.driver.title')} description={t('seo.driver.description')} path="/fahrer" />
+
       <div className="phead">
         <div className="wrap">
           <p className="eyebrow">{t('driver.eyebrow')}</p>

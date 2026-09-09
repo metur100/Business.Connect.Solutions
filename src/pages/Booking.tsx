@@ -4,6 +4,7 @@ import { company } from '../data/company'
 import { useLanguage } from '../i18n/LanguageContext'
 import { fleetImages } from '../data/fleetImages'
 import AnyQuestions from '../components/AnyQuestions'
+import Seo from '../components/Seo'
 
 const emptyForm = {
   occasion: '', date: '', from: '', to: '', passengers: '',
@@ -93,6 +94,8 @@ export default function Booking() {
 
   return (
     <>
+      <Seo title={t('seo.booking.title')} description={t('seo.booking.description')} path="/anfrage" />
+
       <div className="phead">
         <div className="wrap">
           <p className="eyebrow">{t('booking.eyebrow')}</p>
