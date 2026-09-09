@@ -44,7 +44,7 @@ export default function DossierReel({ items, ariaLabel }: { items: DossierItem[]
     function onWheel(e: WheelEvent) {
       if (atBoundary(e.deltaY)) {
         e.preventDefault()
-        window.scrollBy({ top: e.deltaY, behavior: 'auto' })
+        window.scrollBy(0, e.deltaY)
       }
     }
 
@@ -57,7 +57,7 @@ export default function DossierReel({ items, ariaLabel }: { items: DossierItem[]
       const deltaY = touchY - currentY
       if (atBoundary(deltaY)) {
         e.preventDefault()
-        window.scrollBy({ top: deltaY, behavior: 'auto' })
+        window.scrollBy(0, deltaY)
       }
       touchY = currentY
     }
