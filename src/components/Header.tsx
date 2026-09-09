@@ -1,10 +1,19 @@
 import { useState } from 'react'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink, Link, useLocation } from 'react-router-dom'
 import { useLanguage } from '../i18n/LanguageContext'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
   const { t, lang, setLang } = useLanguage()
+  const { pathname } = useLocation()
+
+  // Clicking Home/the logo while already on "/" doesn't trigger a route
+  // change, so the app-wide scroll-to-top-on-navigate effect never runs —
+  // without this, a visitor scrolled down and clicking Home just stays put.
+  function goHome() {
+    setOpen(false)
+    if (pathname === '/') window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   const links = [
     { to: '/', label: t('nav.start') },
@@ -19,7 +28,7 @@ export default function Header() {
   return (
     <header className="hdr">
       <div className="hdr__in" style={{ position: 'relative' }}>
-        <Link className="logo" to="/" onClick={() => setOpen(false)} aria-label={t('header.logoAria')}>
+        <Link className="logo" to="/" onClick={goHome} aria-label={t('header.logoAria')}>
           <span className="logo__mark" aria-hidden="true">
             <span>BUSINESS</span>
             <span>CONNECT</span>
@@ -34,7 +43,7 @@ export default function Header() {
               to={l.to}
               end={l.to === '/'}
               className={({ isActive }) => (isActive ? 'is-active' : '')}
-              onClick={() => setOpen(false)}
+              onClick={l.to === '/' ? goHome : () => setOpen(false)}
             >
               {l.label}
             </NavLink>

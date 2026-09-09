@@ -305,19 +305,21 @@ a.chip:hover {
 .dossier__wrap { position: relative; padding-right: clamp(2rem, 6vw, 3.5rem); }
 .dossier__reel {
   height: min(56vh, 460px);
-  overflow-y: auto;
-  scroll-snap-type: y mandatory;
-  scrollbar-width: none;
+  overflow: hidden;
 }
-.dossier__reel::-webkit-scrollbar { display: none; }
+.dossier__track {
+  height: 100%;
+  transition: transform 0.55s cubic-bezier(0.65, 0, 0.35, 1);
+}
 .dossier__slide {
   height: 100%;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 0.5rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  .dossier__track { transition: none; }
 }
 .dossier__slide .dossier__v { font-size: var(--step-3); }
 .dossier__caption {
