@@ -11,6 +11,13 @@ const de = {
     tagline: 'Professionelle Mobilität — Globale Standards', whatsapp: 'WhatsApp',
   },
   contactBar: { aria: 'Direkter Kontakt', whatsapp: 'WhatsApp', email: 'E-Mail', book: 'Anfragen →' },
+  cookieConsent: {
+    aria: 'Cookie-Einstellungen',
+    text: 'Wir nutzen Cookies, um die Nutzung dieser Website auszuwerten (Google Analytics) und relevante Werbung zu schalten (Google Ads). Weitere Informationen finden Sie in unserer',
+    link: 'Cookie-Richtlinie',
+    accept: 'Alle akzeptieren',
+    decline: 'Nur erforderliche',
+  },
   faq: { eyebrow: 'Häufige Fragen', heading: 'Was Kunden vor der ersten Fahrt wissen wollen' },
   anyQuestions: {
     eyebrow: 'Rund um die Uhr', heading: 'Noch Fragen?',
@@ -193,6 +200,13 @@ const en: typeof de = {
     tagline: 'Professional mobility — global standards', whatsapp: 'WhatsApp',
   },
   contactBar: { aria: 'Direct contact', whatsapp: 'WhatsApp', email: 'Email', book: 'Enquire →' },
+  cookieConsent: {
+    aria: 'Cookie settings',
+    text: 'We use cookies to analyse the use of this website (Google Analytics) and to serve relevant advertising (Google Ads). More information is available in our',
+    link: 'Cookie policy',
+    accept: 'Accept all',
+    decline: 'Essential only',
+  },
   faq: { eyebrow: 'Frequently asked questions', heading: 'What clients want to know before their first ride' },
   anyQuestions: {
     eyebrow: 'Around the clock', heading: 'Still have questions?',

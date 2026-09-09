@@ -3,6 +3,7 @@ import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ContactBar from './components/ContactBar'
+import CookieConsent from './components/CookieConsent'
 import Home from './pages/Home'
 import Services from './pages/Services'
 import ServiceDetail from './pages/ServiceDetail'
@@ -15,10 +16,14 @@ import Booking from './pages/Booking'
 import Legal from './pages/Legal'
 import NotFound from './pages/NotFound'
 import { useLanguage } from './i18n/LanguageContext'
+import { trackPageview } from './lib/analytics'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
-  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    trackPageview(pathname)
+  }, [pathname])
   return null
 }
 
@@ -51,6 +56,7 @@ export default function App() {
       </main>
       <Footer />
       <ContactBar />
+      <CookieConsent />
     </>
   )
 }

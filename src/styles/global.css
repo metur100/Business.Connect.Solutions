@@ -602,6 +602,47 @@ a.card:hover .card__more { color: var(--brass); }
   .cbar__label { display: none; }
 }
 
+/* ---- Cookie consent banner ---- */
+.cookie-consent {
+  position: fixed;
+  left: 0; right: 0;
+  bottom: var(--bar-h);
+  z-index: 70;
+  background: var(--navy-900);
+  color: var(--paper);
+  border-top: 1px solid rgba(185, 148, 90, 0.35);
+}
+.cookie-consent__in {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding: 1.1rem var(--pad);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.cookie-consent__text {
+  margin: 0;
+  font-size: var(--step--1);
+  line-height: 1.55;
+  color: var(--paper);
+  flex: 1 1 320px;
+}
+.cookie-consent__text a { color: var(--brass-lt); text-decoration: underline; }
+.cookie-consent__actions {
+  display: flex;
+  gap: 0.75rem;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+}
+.cookie-consent .btn--ghost { border-color: rgba(248, 243, 234, 0.5); }
+@media (max-width: 700px) {
+  .cookie-consent__in { padding-block: 1rem; }
+  .cookie-consent__actions { width: 100%; }
+  .cookie-consent__actions .btn { flex: 1 1 0; justify-content: center; }
+}
+
 /* ---- Page head ---- */
 .phead { background: var(--navy-900); color: var(--paper); padding-block: clamp(3rem, 7vw, 6rem) clamp(2rem, 4vw, 3.5rem); }
 .phead h1 { font-size: var(--step-3); font-weight: 300; text-transform: uppercase; }
