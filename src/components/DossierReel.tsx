@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 
 type DossierItem = { k: string; v: string; n: string }
 
-const AUTOPLAY_MS = 1600
+const AUTOPLAY_MS = 2200
 
 export default function DossierReel({ items, ariaLabel }: { items: DossierItem[]; ariaLabel: string }) {
   const trackRef = useRef<HTMLDivElement>(null)
