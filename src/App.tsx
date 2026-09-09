@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ContactBar from './components/ContactBar'
@@ -44,6 +44,8 @@ export default function App() {
           <Route path="/datenschutz" element={<Legal docKey="datenschutz" />} />
           <Route path="/agb" element={<Legal docKey="agb" />} />
           <Route path="/cookie-richtlinie" element={<Legal docKey="cookies" />} />
+          <Route path="/en" element={<Navigate to="/" replace />} />
+          <Route path="/en/*" element={<Navigate to="/" replace />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
