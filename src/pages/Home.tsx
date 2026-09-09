@@ -9,6 +9,7 @@ import { fleetImages } from '../data/fleetImages'
 
 export default function Home() {
   const heroMediaRef = useRef<HTMLDivElement>(null)
+  const dossierSectionRef = useRef<HTMLElement>(null)
   const { t, content } = useLanguage()
   const { dossier, services, fleet, onDemand, regions, worldwide, events } = content
 
@@ -22,6 +23,39 @@ export default function Home() {
       cancelAnimationFrame(raf)
       raf = requestAnimationFrame(() => {
         if (media) media.style.transform = `translateY(${Math.min(window.scrollY * 0.25, 120)}px)`
+      })
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      cancelAnimationFrame(raf)
+    }
+  }, [])
+
+  // The first time the dossier section starts to appear while scrolling
+  // down from the hero, finish the job and centre it in the viewport —
+  // once only, so it doesn't fight the user on any later scroll. (An
+  // IntersectionObserver can't do this reliably here: on a short-enough
+  // viewport the section already peeks in at scrollY 0, so its threshold
+  // is "crossed" once at mount and never fires again as the user scrolls
+  // further into it — a plain scroll check doesn't have that problem.)
+  useEffect(() => {
+    const section = dossierSectionRef.current
+    if (!section) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+    let done = false
+    let raf = 0
+    function onScroll() {
+      if (done) return
+      cancelAnimationFrame(raf)
+      raf = requestAnimationFrame(() => {
+        if (done || !section || window.scrollY <= 0) return
+        if (section.getBoundingClientRect().top < window.innerHeight) {
+          done = true
+          section.scrollIntoView({ behavior: 'smooth', block: 'center' })
+          window.removeEventListener('scroll', onScroll)
+        }
       })
     }
     window.addEventListener('scroll', onScroll, { passive: true })
@@ -66,7 +100,7 @@ export default function Home() {
       </section>
 
       {/* ---------- SIGNATURE: Einsatzprotokoll ---------- */}
-      <section className="section--dark dossier">
+      <section className="section--dark dossier dossier--reel" ref={dossierSectionRef}>
         <div className="wrap">
           <DossierReel items={dossier} ariaLabel={t('home.dossierAria')} />
         </div>

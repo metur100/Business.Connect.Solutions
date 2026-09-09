@@ -25,6 +25,53 @@ export default function DossierReel({ items, ariaLabel }: { items: DossierItem[]
     return () => io.disconnect()
   }, [items.length])
 
+  // Native overscroll-chaining (handing scroll off to the page once this
+  // panel's own scroll is exhausted) is unreliable across browsers once a
+  // mandatory scroll-snap container is involved — it can silently swallow
+  // the scroll depending on exactly where the pointer is. Handle the
+  // boundary handoff explicitly instead, so it always works the same way.
+  useEffect(() => {
+    const reel = reelRef.current
+    if (!reel) return
+
+    function atBoundary(deltaY: number) {
+      const el = reel!
+      const atTop = el.scrollTop <= 1
+      const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 1
+      return (deltaY < 0 && atTop) || (deltaY > 0 && atBottom)
+    }
+
+    function onWheel(e: WheelEvent) {
+      if (atBoundary(e.deltaY)) {
+        e.preventDefault()
+        window.scrollBy({ top: e.deltaY, behavior: 'auto' })
+      }
+    }
+
+    let touchY = 0
+    function onTouchStart(e: TouchEvent) {
+      touchY = e.touches[0].clientY
+    }
+    function onTouchMove(e: TouchEvent) {
+      const currentY = e.touches[0].clientY
+      const deltaY = touchY - currentY
+      if (atBoundary(deltaY)) {
+        e.preventDefault()
+        window.scrollBy({ top: deltaY, behavior: 'auto' })
+      }
+      touchY = currentY
+    }
+
+    reel.addEventListener('wheel', onWheel, { passive: false })
+    reel.addEventListener('touchstart', onTouchStart, { passive: true })
+    reel.addEventListener('touchmove', onTouchMove, { passive: false })
+    return () => {
+      reel.removeEventListener('wheel', onWheel)
+      reel.removeEventListener('touchstart', onTouchStart)
+      reel.removeEventListener('touchmove', onTouchMove)
+    }
+  }, [])
+
   function goTo(i: number) {
     const reel = reelRef.current
     if (!reel) return
