@@ -1,6 +1,27 @@
 <!doctype html>
 <html lang="de">
   <head>
+    <!-- Consent Mode defaults to "denied" until a cookie-consent banner calls
+         grantAnalyticsConsent() (see src/lib/analytics.ts). Must run before
+         GTM loads so tags fired by GTM respect it from the start. -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ window.dataLayer.push(arguments); }
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+      });
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5KH9Z37P');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BCO Solutions – Chauffeur- und Sicherheitsfahrer in München</title>
@@ -55,27 +76,12 @@
       ]
     }
     </script>
-
-    <!-- Google tag (gtag.js) for GA4 + Google Ads. Consent Mode defaults to
-         "denied" until a cookie-consent banner calls grantAnalyticsConsent()
-         (see src/lib/analytics.ts). Replace the placeholder IDs below with
-         the real GA4 / Google Ads IDs once available. -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){ window.dataLayer.push(arguments); }
-      gtag('consent', 'default', {
-        ad_storage: 'denied',
-        ad_user_data: 'denied',
-        ad_personalization: 'denied',
-        analytics_storage: 'denied',
-      });
-      gtag('js', new Date());
-      gtag('config', 'G-0GXNZQRWEW', { send_page_view: false });
-      gtag('config', 'AW-XXXXXXXXX');
-    </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0GXNZQRWEW"></script>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5KH9Z37P"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
