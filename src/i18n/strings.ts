@@ -51,7 +51,7 @@ const de = {
     eventsCta: 'Alle Anlässe →',
   },
   driver: {
-    eyebrow: 'Chauffeur- und Sicherheitsfahrer', h1: 'Ihr persönlicher Fahrer für höchste Sicherheitsansprüche',
+    eyebrow: 'Chauffeur- und Limousinenservice', h1: 'Ihr persönlicher Fahrer für höchste Sicherheitsansprüche',
     intro: 'Seit 2006 als Chauffeur tätig, seit 2012 zusätzlich als ausgebildeter Sicherheitsfahrer.',
     personEyebrow: 'Zur Person', personH2a: '20 Jahre Erfahrung,', personH2b: 'persönlich im Einsatz',
     lead: 'Meine Ausbildung umfasst mehrtägige Fahrsicherheitstrainings am Fahrsicherheitszentrum Sachsenring – inklusive Training für Sonderschutzfahrzeuge – sowie das Mercedes Guard Programm.',
@@ -151,15 +151,15 @@ const de = {
   },
   seo: {
     home: {
-      title: 'Chauffeurservice & Sicherheitsfahrer München | BCO Solutions',
-      description: 'Persönlicher Chauffeur- und Sicherheitsfahrer in München. Seit 2006 im Einsatz für Vorstände, Delegationen und internationale Gäste – MSC, Roadshows, Flughafentransfers. 24/7 erreichbar.',
+      title: 'Chauffeurservice & Limousinenservice München | BCO Solutions',
+      description: 'Persönlicher Chauffeur- und Limousinenservice in München. Seit 2006 im Einsatz für Vorstände, Delegationen und internationale Gäste – MSC, Roadshows, Flughafentransfers. 24/7 erreichbar.',
     },
     services: {
       title: 'Leistungen: Chauffeur, Sicherheit, Reisemanagement | BCO Solutions',
       description: 'Chauffeurservice, Flughafentransfer, Sicherheitsdienst, Gruppenreisen, Reisemanagement, Host & Hostessenservices und Concierge – alle Leistungen aus einer Hand in München.',
     },
     driver: {
-      title: 'Ihr Fahrer: Chauffeur & Sicherheitsfahrer seit 2006 | BCO Solutions',
+      title: 'Ihr Fahrer: Chauffeur & Limousinenservice seit 2006 | BCO Solutions',
       description: 'Chauffeur seit 2006, ausgebildeter Sicherheitsfahrer seit 2012. Fahrsicherheitstraining Sachsenring, Mercedes Guard Programm, Einsätze für Vorstände, Delegationen und die Münchner Sicherheitskonferenz.',
     },
     fleet: {
